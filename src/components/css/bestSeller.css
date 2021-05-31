@@ -1,0 +1,124 @@
+.bs-category-menu {
+    margin: 40px 0;
+  }
+  .bs-category-menu--ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .bs-category-menu--ul li {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .bs-category-menu--ul a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+  }
+  .bs-category-menu--ul a:hover {
+    color: #33A0FF;
+    border-bottom: 2px solid #33A0FF;
+  }
+  
+  .bs-category-gallery--one, .bs-category-gallery--two {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+  }
+  .bs-category-gallery--one--box {
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+  }
+  .bs-category-gallery--one--box--image {
+    position: relative;
+  }
+  .bs-category-gallery--one--box--image img {
+    width: 200px;
+  }
+  .bs-category-gallery--one--box--image:hover .bs-category-gallery--one--box--image--overlay {
+    opacity: 90%;
+  }
+  .bs-category-gallery--one--box--image--overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    background-color: white;
+  }
+  .bs-category-gallery--one--box--image--overlay i {
+    margin: 0 10px;
+    color: #33A0FF;
+    font-size: 13pt;
+  }
+  .bs-category-gallery--one--box--h4 {
+    margin: 20px 0;
+  }
+  .bs-category-gallery--one--box--stars {
+    display: flex;
+    color: #fec73d;
+    font-size: 10pt;
+  }
+  .bs-category-gallery--one--box--stars--last {
+    color: lightgray;
+  }
+  .bs-category-gallery--one--box--price {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 85px;
+  }
+  .bs-category-gallery--one--box--price--enabled {
+    color: #f74657;
+  }
+  .bs-category-gallery--one--box--price--disabled {
+    color: lightgray;
+    text-decoration: line-through;
+  }
+  
+  .hot {
+    position: relative;
+  }
+  .hot::after {
+    content: "HOT";
+    position: absolute;
+    background-color: #FD2E2E;
+    padding: 5px;
+    left: 5px;
+    top: 5px;
+    font-size: 8pt;
+    color: white;
+  }
+  
+  .bs-category-gallery--two {
+    margin-top: 30px;
+  }
+  .load-link {
+    margin-top: 80px;
+  }
+  .load-link a {
+    color: #33A0FF;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    font-weight: bolder;
+  }
+  .load-link a:hover {
+    border-bottom: 2px solid #33A0FF;
+  }
+
+  
+.bs-category-title-h3 {
+    text-align: center;
+    font-weight: bolder;
+  }

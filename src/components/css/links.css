@@ -1,0 +1,18 @@
+.links__nav--links {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .links__nav--links li {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .links__nav--links li a {
+    color: black;
+    text-decoration: none;
+  }
+  .links__nav--links li a:hover, .links__nav--links li a:active {
+    color: #33A0FF;
+  }
