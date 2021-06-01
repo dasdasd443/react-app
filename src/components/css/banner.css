@@ -12,8 +12,6 @@
     height: 100%;
     width: 75vw;
     margin: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -21,7 +19,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 1rem;
+    gap: 5rem;
   }
   
   .banner__flag .flag__text, .banner__flag .flag__pic {
@@ -54,13 +52,17 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     width: 100%;
   }
   
   .banner__flag .flag__text h1 {
     font-size: 36px;
     font-weight: bold;
+  }
+
+  .banner__flag .banner__flag--nav-icon{
+    font-size:28px;
   }
   
   .banner__flag .flag__text span {
@@ -91,8 +93,6 @@
   }
   
   .banner__mini {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
     top: -10vh;

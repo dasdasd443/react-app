@@ -1,6 +1,7 @@
 import BannerCSS from './css/banner.css';
 import Images from './exportFiles/exportImages';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faGreaterThan, faLessThan} from '@fortawesome/free-solid-svg-icons';
 
 let images = new Images();
 
@@ -8,7 +9,7 @@ const Banner = () => {
     return (
         <section className="banner">
         <section className="banner__flag">
-            <i className="fas fa-less-than"></i>
+            <FontAwesomeIcon icon={faLessThan} className="banner__flag--nav-icon"/>
             <section className="flag__text">
                 <h1>iPhone X</h1>
                 <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</span>
@@ -17,7 +18,7 @@ const Banner = () => {
             <section className="flag__pic">
                 <img src={images.MaskGroup1()} alt=""/>
             </section>
-            <i className="fas fa-greater-than"></i>
+            <FontAwesomeIcon icon={faGreaterThan} className="banner__flag--nav-icon"/>
         </section>
         <section className="banner__mini">
             <section className="item-1">
