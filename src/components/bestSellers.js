@@ -6,13 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 let images = new Images();
 const BestSeller = () => {
     return (
-        <section class="bs-category">
-            <div class="bs-category-title">
-                <h3 class="bs-category-title-h3">BEST SELLER</h3>
+        <section className="bs-category">
+            <div className="bs-category-title">
+                <h3 className="bs-category-title-h3">BEST SELLER</h3>
             </div>
-            <div class="bs-category-menu">
-                <nav class="bs-category-menu--nav" >
-                    <ul class="bs-category-menu--ul">
+            <div className="bs-category-menu">
+                <nav className="bs-category-menu--nav" >
+                    <ul className="bs-category-menu--ul">
                         <li><a href="">All</a></li>
                         <li><a href="">Mac</a></li>
                         <li><a href="">iPhone</a></li>
@@ -22,185 +22,185 @@ const BestSeller = () => {
                     </ul>
                 </nav>
             </div>
-            <div class="bs-category-gallery">
+            <div className="bs-category-gallery">
 
-                <div class="bs-category-gallery--one">
-                    <div class="bs-category-gallery--one--box hot">
-                        <div class="bs-category-gallery--one--box--image">
+                <div className="bs-category-gallery--one">
+                    <div className="bs-category-gallery--one--box hot">
+                        <div className="bs-category-gallery--one--box--image">
                         <img src={images.AppleMac()} alt="" />
-                        <div class="bs-category-gallery--one--box--image--overlay">
-                            <i class="fas fa-heart"></i>
-                            <i class="fas fa-shopping-cart"></i>
+                        <div className="bs-category-gallery--one--box--image--overlay">
+                            <i className="fas fa-heart"></i>
+                            <i className="fas fa-shopping-cart"></i>
                         </div>
                         </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                         <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                         <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
-                            <FontAwesomeIcon icon={faStar}/>
-                            <FontAwesomeIcon icon={faStar}/>
-                            <FontAwesomeIcon icon={faStar}/>
-                            <FontAwesomeIcon icon={faStar}/>
-                            <i class="fas fa-star bs-category-gallery--one--box--stars--last"></i>
-                        </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
-                        </div>
-                    </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
-                            <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
+                        </div>
+                    </div>
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
+                            <img src={images.AppleMac()} alt="" />
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
+                            </div>
+                            </div>
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
+                            <FontAwesomeIcon icon={faStar}/>
+                            <FontAwesomeIcon icon={faStar}/>
+                            <FontAwesomeIcon icon={faStar}/>
+                            <FontAwesomeIcon icon={faStar}/>
+                            <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
+                        </div>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bs-category-gallery--two">
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                <div className="bs-category-gallery--two">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
-                    <div class="bs-category-gallery--one--box">
-                        <div class="bs-category-gallery--one--box--image">
+                    <div className="bs-category-gallery--one--box">
+                        <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                        <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                        <div class="bs-category-gallery--one--box--stars">
+                        <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                        <div className="bs-category-gallery--one--box--stars">
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar}/>
                             <FontAwesomeIcon icon={faStar} className = "bs-category-gallery--one--box--stars--last"/>
                         </div>
-                        <div class="bs-category-gallery--one--box--price">
-                            <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                            <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                        <div className="bs-category-gallery--one--box--price">
+                            <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                     </div>
                 </div>
             </div>
         
-        <div class="load-link">
-            <center><a href="" class="load-link">LOAD MORE</a></center>
+        <div className="load-link">
+            <center><a href="" className="load-link">LOAD MORE</a></center>
         </div>
         </section>
     );
