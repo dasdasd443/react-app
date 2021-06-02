@@ -1,8 +1,8 @@
-import BestSellerCSS from './css/bestSeller.css';
-import Images from './exportFiles/exportImages';
+import BestSellerCSS from './bestSeller.css';
+import Images from '../../exportFiles/exportImages';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import BestSellerCard from './mini-component/best-seller-card';
+import BestSellerCard from '../../mini-component/best-seller-card';
 
 let images = new Images();
 const BestSeller = () => {

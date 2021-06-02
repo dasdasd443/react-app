@@ -1,10 +1,10 @@
-import CategoriesCSS from './css/categories.css';
+import CategoriesCSS from './categories.css';
 import {faDollarSign, faShippingFast, faHeadset,faStar} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FeaturedProduct from './mini-component/featured-product';
-import LatestNews from './mini-component/latest-news';
-import FreeFundBox from './mini-component/free-fund-box';
-import Image from './exportFiles/exportImages';
+import FeaturedProduct from '../../mini-component/featured-product';
+import LatestNews from '../../mini-component/latest-news';
+import FreeFundBox from '../../mini-component/free-fund-box';
+import Image from '../../exportFiles/exportImages';
 let images = new Image();
 
 const Categories = () => {

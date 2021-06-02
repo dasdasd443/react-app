@@ -1,0 +1,10 @@
+.main{
+    display:flex;
+    justify-content: space-between;
+    .main__product-information{
+        flex:6;
+    }
+    .main__product-bestsellers{
+        flex:6;
+    }
+}

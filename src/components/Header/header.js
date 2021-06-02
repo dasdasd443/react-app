@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingBasket, faSearch} from '@fortawesome/free-solid-svg-icons';
-import Title from './title';
-import HeaderCSS from './css/header.css';
+import Title from './Title/title';
+import HeaderCSS from './header.css';
 
 const Header = (props) =>
 {
