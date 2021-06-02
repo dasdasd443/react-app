@@ -26,7 +26,7 @@ const Categories = () => {
             <div className="others-category-latestnews">
                 <h2 className="others-category-latestnews-h2">FEATURED PRODUCTS</h2>
                 <div className="others-category-latestnews--boxes">
-                    <FeaturedProduct image={images.BeatsSolo()} product_name="Beats Solo 2 On Ear Headphones-Black"/>
+                    <FeaturedProduct image={images.BeatsSoloBlack1()} product_name="Beats Solo 2 On Ear Headphones-Black"/>
                     <FeaturedProduct image={images.HvTray()} product_name="H-Squared tvTray"/>
                     <FeaturedProduct image={images.RainGauge()} product_name="Netatmo Rain Gauge"/>
                 </div>
