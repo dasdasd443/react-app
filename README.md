@@ -1,3 +1,10 @@
+#Routing Notes
+Click on Store to go to the products page and then refresh, refresh on clicking the links.
+
+Home for the index page.
+
+Routing is still not fully functional
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
