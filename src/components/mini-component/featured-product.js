@@ -1,4 +1,4 @@
-import {faDollarSign, faShippingFast, faHeadset,faStar} from '@fortawesome/free-solid-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const FeaturedProduct = ({image, product_name}) => {
     return (

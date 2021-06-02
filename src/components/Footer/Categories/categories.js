@@ -1,6 +1,5 @@
 import CategoriesCSS from './categories.css';
-import {faDollarSign, faShippingFast, faHeadset,faStar} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faDollarSign, faShippingFast, faHeadset} from '@fortawesome/free-solid-svg-icons';
 import FeaturedProduct from '../../mini-component/featured-product';
 import LatestNews from '../../mini-component/latest-news';
 import FreeFundBox from '../../mini-component/free-fund-box';
@@ -9,7 +8,7 @@ let images = new Image();
 
 const Categories = () => {
     return (
-        <section className="others-category">
+        <section className="others-category" style={CategoriesCSS}>
             <div className="others-category-freefundsupport">
                 <FreeFundBox icon={faShippingFast} text = "FREE SHIPPING"/>
                 <FreeFundBox icon={faDollarSign} text = "100% REFUND"/>

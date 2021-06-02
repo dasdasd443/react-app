@@ -5,7 +5,7 @@ import Images from '../../../../exportFiles/exportImages';
 let images = new Images();
 const ProductsRelated = () => {
     return (
-        <section class="related-products">
+        <section class="related-products" style={ProductsRelatedCSS}>
                 <h2 class="related-products-title">RELATED PRODUCTS</h2>
 
                 <div class="bs-category-gallery--one">

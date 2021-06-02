@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from "react-router-dom";
 import ProductsPageCSS from './products-page.css';
 import Header from '../../Header/header.js';
 import Title from '../../Header/Title/title';
@@ -11,7 +10,7 @@ import Footer from '../../Footer/footer';
 
 const ProductsPage = () => {
     return (
-        <div className = "container">
+        <div className = "container" style={ProductsPageCSS}>
                 <div className="App">
                     <Header/>
                     <span className="line-title"></span>

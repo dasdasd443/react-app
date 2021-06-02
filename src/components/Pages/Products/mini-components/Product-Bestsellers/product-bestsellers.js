@@ -3,7 +3,7 @@ import Images from '../../../../exportFiles/exportImages';
 let images = new Images();
 const ProductBestSellers = () => {
     return (
-        <section class="items-right">
+        <section class="items-right" style={BestSellerCSS}>
                     <div class="items-right-bestSeller">
                         <h4 class="items-right-bestSeller-h4">BEST SELLER</h4>
                         <div class="bs-category-gallery--one--box">

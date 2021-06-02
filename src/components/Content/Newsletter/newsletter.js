@@ -10,7 +10,7 @@ const Newsletter = () => {
          newsletter.display = "none";
     }
     return (
-        <section className="newsletter">
+        <section className="newsletter" style={NewsLetterCSS}>
             <section className="newsletter__background">
             </section>
             <section className="newsletter__popup">

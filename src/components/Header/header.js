@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingBasket, faSearch} from '@fortawesome/free-solid-svg-icons';
-import Title from './Title/title';
 import HeaderCSS from './header.css';
 
 const Header = (props) =>
 {
     return (
-        <section className="header">
+        <section className="header" style={HeaderCSS}>
             <section className="header__lang">
                 <section className="header__lang--item">
                     <span>EN</span>
