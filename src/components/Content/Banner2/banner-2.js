@@ -1,5 +1,5 @@
-import Banner2CSS from './css/banner-2.css';
-import Image from './exportFiles/exportImages';
+import Banner2CSS from './banner-2.css';
+import Image from '../../exportFiles/exportImages';
 let images = new Image();
 const Banner2 = () => {
     return (

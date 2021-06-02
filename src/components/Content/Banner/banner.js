@@ -1,5 +1,5 @@
-import BannerCSS from './css/banner.css';
-import Images from './exportFiles/exportImages';
+import BannerCSS from './banner.css';
+import Images from '../../exportFiles/exportImages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faGreaterThan, faLessThan} from '@fortawesome/free-solid-svg-icons';
 

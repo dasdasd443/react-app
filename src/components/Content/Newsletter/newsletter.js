@@ -1,5 +1,5 @@
-import NewsLetterCSS from './css/newsletter.css';
-import Image from './exportFiles/exportImages';
+import NewsLetterCSS from './newsletter.css';
+import Image from '../../exportFiles/exportImages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
 let images = new Image(); 
