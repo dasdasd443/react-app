@@ -1,4 +1,5 @@
-#Routing Notes
+# Routing Notes
+
 Click on Store to go to the products page and then refresh, refresh on clicking the links.
 
 Home for the index page.
