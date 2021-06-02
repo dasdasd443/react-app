@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Index from './components/Pages/Index/index';
 import ProductsPage from './components/Pages/Products/products-page';

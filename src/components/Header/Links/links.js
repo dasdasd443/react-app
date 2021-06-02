@@ -1,10 +1,10 @@
 import LinksCSS from './links.css';
-import {Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 const Links = () => {
     return (
         <Router>
-            <section className="links">
+            <section className="links" style={LinksCSS}>
                 <nav className="links__nav">
                     <ul className="links__nav--links">
                         <li><Link to="/">Home</Link></li>

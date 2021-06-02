@@ -17,7 +17,7 @@ const ProductInformation = () => {
         setQuantity(quantity => quantity + 1);
     }
     return (
-            <section class="items-left">
+            <section class="items-left" style={ProductInformationCSS}>
                 <div class="items-left-details">
                     <div class="items-left-details--productImages">
                         <figure class="items-left-details--productImages--largeView">

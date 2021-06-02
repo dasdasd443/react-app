@@ -7,7 +7,7 @@ let images = new Images();
 
 const Banner = () => {
     return (
-        <section className="banner">
+        <section className="banner" style={BannerCSS}>
         <section className="banner__flag">
             <FontAwesomeIcon icon={faLessThan} className="banner__flag--nav-icon"/>
             <section className="flag__text">

@@ -1,7 +1,7 @@
 import NavigationCSS from './navigation.css';
 const Navigation = () => {
     return (
-        <section className="navigation">
+        <section className="navigation" style={NavigationCSS}>
             <section className="navigation__links">
                 <a href="">Home</a>
                 <span>/</span>

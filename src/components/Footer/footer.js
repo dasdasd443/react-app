@@ -1,8 +1,7 @@
 import FooterCSS from './footer.css';
-function Footer()
-{
+const Footer = () =>{
     return (
-        <footer className="foot">
+        <footer className="foot" style={FooterCSS}>
         <hr/>
         <div className="container">
         <section className="foot-sec1">
