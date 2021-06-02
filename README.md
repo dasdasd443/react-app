@@ -2,6 +2,8 @@
 
 Click on Store to go to the products page and then refresh, refresh on clicking the links.
 
+Use of state is on the products page.
+
 Home for the index page.
 
 Routing is still not fully functional
