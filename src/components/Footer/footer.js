@@ -1,4 +1,6 @@
+import Image from '../exportFiles/exportImages';
 import FooterCSS from './footer.css';
+let images = new Image();
 const Footer = () =>{
     return (
         <footer className="foot" style={FooterCSS}>
@@ -82,10 +84,10 @@ const Footer = () =>{
         <section className="foot-sec3">
         <span className="foot-sec3-copyright">© 2018 Ecommerce theme by www.bisenbaev.com</span>
         <figure className="foot-sec3-paymentIcon">
-        <img src="/Frontend-final-exercise/Western-union.png" alt="" />
-        <img src="/Frontend-final-exercise/Group 19.png" alt="" />
-        <img src="/Frontend-final-exercise/Paypal.png" alt="" />
-        <img src="/Frontend-final-exercise/visa.jpg" alt="" />
+        <img src={images.WesternUnionLogo()} alt="" />
+        <img src={images.MasterCardLogo()} alt="" />
+        <img src={images.PaypalLogo()} alt="" />
+        <img src={images.VisaLogo()} alt="" />
         </figure>
         </section>
         </div>  

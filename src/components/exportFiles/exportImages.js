@@ -14,8 +14,26 @@ import BeatsSoloBlack2 from '../../assets/black-2.png';
 import BeatsSoloBlack3 from '../../assets/black-3.png';
 import BeatsSoloBlack4 from '../../assets/black-4.png';
 import BeatsSoloBlack5 from '../../assets/black-5.png';
+import WesternUnionLogo from '../../assets/Western-union.png';
+import PaypalLogo from '../../assets/Paypal.png';
+import VisaLogo from '../../assets/visa.jpg';
+import MasterCardLogo from '../../assets/mastercard.png';
+
+
 
 export default class Images{
+    WesternUnionLogo(){
+        return WesternUnionLogo;
+    }
+    MasterCardLogo(){
+        return MasterCardLogo;
+    }
+    VisaLogo(){
+        return VisaLogo;
+    }
+    PaypalLogo(){
+        return PaypalLogo;
+    }
     BeatsSoloBlack5(){
         return BeatsSoloBlack5;
     }
@@ -65,3 +83,4 @@ export default class Images{
         return RainGauge;
     }
 }
+
