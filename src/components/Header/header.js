@@ -1,9 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faShoppingBasket, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faShoppingBasket, faSearch,faUser} from '@fortawesome/free-solid-svg-icons';
+import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import HeaderCSS from './header.css';
+
 
 const Header = (props) =>
 {
+    const LogoutUser = () => {
+        sessionStorage.removeItem("user");
+        window.location.href = "/";
+    }
+    const [loggedIn, setLoggedIn] = useState(JSON.parse(sessionStorage.getItem("user")));
+    let user = (loggedIn != undefined)? <Link to="/" className="user" onClick={LogoutUser}>{loggedIn.fullName}</Link>: <Link to="/login" className="user">My profile</Link>;
+    
     return (
         <section className="header" style={HeaderCSS}>
             <section className="header__lang">
@@ -18,13 +28,13 @@ const Header = (props) =>
             </section>
             <section className="header__account">
                 <section className="header__account--item">
-                    <i className="far fa-user"></i><span ><a href="login.html" className="user">My profile</a></span>
+                    <FontAwesomeIcon icon={faUser}/><span >{user}</span>
                 </section>
                 <section className="header__account--item">
-                    <a href="page11.html"><FontAwesomeIcon icon={faShoppingBasket} />
+                    <Link to="/"><FontAwesomeIcon icon={faShoppingBasket} />
                         <span>0 Items</span>
                         <small>$0.00</small>
-                    </a>    
+                    </Link>    
                 </section>
                 <section className="header__account--item">
                     <FontAwesomeIcon icon = {faSearch}/>
