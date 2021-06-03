@@ -1,9 +1,8 @@
 import LinksCSS from './links.css';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {Link,BrowserRouter as Router} from 'react-router-dom';
 
 const Links = () => {
     return (
-        <Router>
             <section className="links" style={LinksCSS}>
                 <nav className="links__nav">
                     <ul className="links__nav--links">
@@ -16,7 +15,6 @@ const Links = () => {
                     </ul>
                 </nav>
             </section>
-        </Router>
     );
 }
 
