@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=index.css.map */
+.container {
+  position: relative;
+}
+
+.container .newsletter {
+  position: absolute;
+  right: 50vw;
+}
+/*# sourceMappingURL=index.css.map */

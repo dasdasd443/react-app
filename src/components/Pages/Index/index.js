@@ -7,11 +7,12 @@ import BestSellers from '../../Content/BestSeller/bestSellers';
 import Newsletter from '../../Content/Newsletter/newsletter';
 import Banner2 from '../../Content/Banner2/banner-2';
 import Categories from '../../Footer/Categories/categories';
+import IndexCSS from './index.css';
 
 const Index = () => {
     return (
-            <div className = "container">
-                <Newsletter/>
+            <div className = "container" style={IndexCSS}>
+                <Newsletter classsName="newsletter"/>
                 <div className="App">
                 <Header/>
                 <span className="line-title"></span>
