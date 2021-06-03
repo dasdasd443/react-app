@@ -41,8 +41,12 @@ import VisaLogo from '../../assets/visa.jpg';
 import MasterCardLogo from '../../assets/mastercard.png';
 import AppleLogo from '../../assets/login_signup/apple-64.png';
 import FacebookLogo from '../../assets/login_signup/fb-64.png';
+import Background from '../../assets/login_signup/cover-img.jpg';
 
 export default class Images{
+    Background() {
+        return Background;
+    }
     BeatsSoloBrown1(){
         return BeatsSoloBrown1;
     }
