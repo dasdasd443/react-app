@@ -48,10 +48,14 @@ const Login = () => {
             }
         }
     }
+
+    const Background = {
+        backgroundImage: `url(${images.Background()})`
+    }
     return (
         <section style={LoginCSS}>
             <section className="login-container--background"></section>
-                <section className="container-background">
+                <section className="container-background" style={Background}>
                 </section>
                 <section className="login-container">
                     <section className="login-container--text">

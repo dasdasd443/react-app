@@ -2,6 +2,8 @@ import SignupCSS from './signup.css';
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faEye} from '@fortawesome/free-solid-svg-icons';
+import Images from '../../exportFiles/exportImages';
+let images = new Images();
 
 const Signup = () => {
     const ShowPassword = () => {
@@ -93,10 +95,14 @@ const Signup = () => {
             }
         }
     }
+
+    const Background = {
+        backgroundImage: `url(${images.Background()})`
+    }
     return (
         <section style={SignupCSS}>
             <section className="login-container--background"></section>
-            <section className="container-background">
+            <section className="container-background" style={Background}>
             </section>
             <section className="login-container">
                 <section className="login-container--text">
