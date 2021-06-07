@@ -132,9 +132,9 @@ const ProductInformation = () => {
 
                 <div class="productInformation">
                     <div class="productInformation-menu">
-                        <a href="">Product Information</a>
-                        <a href="">Reviews <span>0</span></a>
-                        <a href="">Another tab</a>
+                        <a href="#">Product Information</a>
+                        <a href="#">Reviews <span>0</span></a>
+                        <a href="#">Another tab</a>
                     </div>
                     <hr class="productInformation--hr"/>
                     <p class="productInformation-p">

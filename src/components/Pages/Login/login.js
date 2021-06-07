@@ -13,7 +13,7 @@ const Login = () => {
 
         let error = 0;
 
-        if(email.length == 0){
+        if(email.length === 0){
             document.querySelector("#email-error").innerText = "Please input an email";
             error = 1;
         }else{
@@ -27,11 +27,11 @@ const Login = () => {
             document.querySelector("#password-error").innerText = " ";
         }
 
-        if(error == 0){
+        if(error === 0){
             let users = localStorage.getItem("users");
             users = JSON.parse(users);
 
-            if(users != null){
+            if(users !== null){
                 let found = 0;
                 users.forEach((user,index) => {
                     if(user.email == email && user.password == password){
@@ -42,7 +42,7 @@ const Login = () => {
                         document.querySelector("#password-error").innerText = "The password is incorrect";
                     }
                 });
-                if(found == 0){
+                if(found === 0){
                     document.querySelector("#email-error").innerText = "Email is not found!";
                 }
             }

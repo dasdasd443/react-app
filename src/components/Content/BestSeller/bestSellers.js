@@ -12,12 +12,12 @@ const BestSeller = () => {
             <div className="bs-category-menu">
                 <nav className="bs-category-menu--nav" >
                     <ul className="bs-category-menu--ul">
-                        <li><a href="">All</a></li>
-                        <li><a href="">Mac</a></li>
-                        <li><a href="">iPhone</a></li>
-                        <li><a href="">iPad</a></li>
-                        <li><a href="">iPod</a></li>
-                        <li><a href="">Accessories</a></li>
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Mac</a></li>
+                        <li><a href="#">iPhone</a></li>
+                        <li><a href="#">iPad</a></li>
+                        <li><a href="#">iPod</a></li>
+                        <li><a href="#">Accessories</a></li>
                     </ul>
                 </nav>
             </div>
@@ -39,7 +39,7 @@ const BestSeller = () => {
             </div>
         
         <div className="load-link">
-            <center><a href="" className="load-link">LOAD MORE</a></center>
+            <center><a href="#" className="load-link">LOAD MORE</a></center>
         </div>
         </section>
     );

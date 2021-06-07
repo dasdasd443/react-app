@@ -34,7 +34,6 @@ import BeatsSoloPink2 from '../../assets/pink-2.png';
 import BeatsSoloPink3 from '../../assets/pink-3.png';
 import BeatsSoloPink4 from '../../assets/pink-4.png';
 import BeatsSoloPink5 from '../../assets/pink-5.png';
-
 import WesternUnionLogo from '../../assets/Western-union.png';
 import PaypalLogo from '../../assets/Paypal.png';
 import VisaLogo from '../../assets/visa.jpg';

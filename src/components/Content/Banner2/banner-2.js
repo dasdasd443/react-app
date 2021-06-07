@@ -8,7 +8,7 @@ const Banner2 = () => {
                 <section className="banner-2__flag__text">
                     <span>iPhone 6 Plus</span>
                     <span>Performance and design. Taken right to the edge.</span>
-                    <a href="">SHOP NOW</a>
+                    <a href="#">SHOP NOW</a>
                 </section>
                 <section className="banner-2__flag__pic">
                     <img src={images.iPhone()} alt=""/>
