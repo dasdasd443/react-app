@@ -1,5 +1,6 @@
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './best-seller-card.css';
 const BestSellerCard = ({image,hotornot}) => {
     return (
         <div className={`bs-category-gallery--one--box ${hotornot}`}>
