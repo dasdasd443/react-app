@@ -9,10 +9,10 @@ const Signup = () => {
     const ShowPassword = () => {
         let password = document.querySelector("#password");
         let icon = document.querySelector("i");
-        if(password.type == "password"){
+        if(password.type === "password"){
             password.type = "text";
             icon.className = "fas fa-eye-slash show-password";
-        }else if(password.type == "text"){
+        }else if(password.type === "text"){
             password.type = "password";
             icon.className = "fas fa-eye show-password";
         }
@@ -35,7 +35,7 @@ const Signup = () => {
 
         console.log(fNameCheck);
 
-        if(fullName.length == 0){
+        if(fullName.length === 0){
             document.querySelector("#fullname-error").innerText = "Please input a value";
             error = 1;
         }else if(fNameCheck.length < 2){
@@ -45,7 +45,7 @@ const Signup = () => {
             document.querySelector("#fullname-error").innerText = " ";
         }
 
-        if(email.length == 0){
+        if(email.length === 0){
             document.querySelector("#email-error").innerText = "Please input an email";
             error = 1;
         }else{
@@ -59,7 +59,7 @@ const Signup = () => {
             document.querySelector("#password-error").innerText = " ";
         }
 
-        if(error == 0){
+        if(error === 0){
             let users = localStorage.getItem("users");
             users = JSON.parse(users);
 
@@ -72,13 +72,13 @@ const Signup = () => {
             if(users != null){
                 let found = 0;
                 users.forEach((user,index) => {
-                    if(user.email == email){
+                    if(user.email === email){
                         document.querySelector("#email-error").innerText = "Email already exists!";
                         found = 1;
                         error = 1;
                     }
                 });
-                if(found == 0){
+                if(found === 0){
                     let users = JSON.parse(localStorage.getItem("users"));
                     users.push(user);
                     localStorage.setItem("users",JSON.stringify(users));
@@ -89,7 +89,7 @@ const Signup = () => {
                 localStorage.setItem("users",JSON.stringify(users));
             }
 
-            if(error == 0){
+            if(error === 0){
                 sessionStorage.setItem("user",JSON.stringify(user));
                 window.location.href = "/";
             }
