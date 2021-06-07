@@ -11,8 +11,8 @@ const Header = (props) =>
         sessionStorage.removeItem("user");
         window.location.href = "/";
     }
-    const [loggedIn] = useState(JSON.parse(sessionStorage.getItem("user")));
-    let user = (loggedIn !== undefined)? <Link to="/" className="user" onClick={LogoutUser}>{loggedIn.fullName}</Link>: <Link to="/login" className="user">My profile</Link>;
+    const [loggedIn,setLoggedIn] = useState(JSON.parse(sessionStorage.getItem("user")));
+    let user = (loggedIn != undefined)? <Link to="/" className="user" onClick={LogoutUser}>{loggedIn.fullName}</Link>: <Link to="/login" className="user">My profile</Link>;
     
     return (
         <section className="header" style={HeaderCSS}>
