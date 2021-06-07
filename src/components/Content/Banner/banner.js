@@ -13,7 +13,7 @@ const Banner = () => {
             <section className="flag__text">
                 <h1>iPhone X</h1>
                 <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</span>
-                <a href="">MORE</a>
+                <a href="#">MORE</a>
             </section>
             <section className="flag__pic">
                 <img src={images.MaskGroup1()} alt=""/>
