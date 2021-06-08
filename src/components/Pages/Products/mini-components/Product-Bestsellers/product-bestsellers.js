@@ -3,41 +3,41 @@ import Images from '../../../../exportFiles/exportImages';
 let images = new Images();
 const ProductBestSellers = () => {
     return (
-        <section class="items-right" style={BestSellerCSS}>
-                    <div class="items-right-bestSeller">
-                        <h4 class="items-right-bestSeller-h4">BEST SELLER</h4>
-                        <div class="bs-category-gallery--one--box">
-                            <div class="bs-category-gallery--one--box--image">
+        <section className="items-right" style={BestSellerCSS}>
+                    <div className="items-right-bestSeller">
+                        <h4 className="items-right-bestSeller-h4">BEST SELLER</h4>
+                        <div className="bs-category-gallery--one--box">
+                            <div className="bs-category-gallery--one--box--image">
                             <img src={images.AppleMac()} alt="" />
-                            <div class="bs-category-gallery--one--box--image--overlay">
-                                <i class="fas fa-heart"></i>
-                                <i class="fas fa-shopping-cart"></i>
+                            <div className="bs-category-gallery--one--box--image--overlay">
+                                <i className="fas fa-heart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </div>
                             </div>
-                            <h4 class="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                            <div class="bs-category-gallery--one--box--stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star bs-category-gallery--one--box--stars--last"></i>
+                            <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
+                            <div className="bs-category-gallery--one--box--stars">
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star bs-category-gallery--one--box--stars--last"></i>
                             </div>
-                            <div class="bs-category-gallery--one--box--price">
-                                <p class="bs-category-gallery--one--box--price--enabled" >$499</p>
-                                <p class="bs-category-gallery--one--box--price--disabled">$599</p>
+                            <div className="bs-category-gallery--one--box--price">
+                                <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
+                                <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                             </div>
                         </div>
                     </div>
-                    <div class="items-right-slides">
-                        <div class="items-right-slides-button"></div>
-                        <div class="items-right-slides-button"></div>
-                        <div class="items-right-slides-button"></div>
-                        <div class="items-right-slides-button"></div>
+                    <div className="items-right-slides">
+                        <div className="items-right-slides-button"></div>
+                        <div className="items-right-slides-button"></div>
+                        <div className="items-right-slides-button"></div>
+                        <div className="items-right-slides-button"></div>
                     </div>
-                    <div class="items-right-ads">
-                        <h2 class="items-right-ads--h2">GoPro Hero 6</h2>
-                        <p class="items-right-ads--p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <p class="items-right-ads--price">$299</p>
+                    <div className="items-right-ads">
+                        <h2 className="items-right-ads--h2">GoPro Hero 6</h2>
+                        <p className="items-right-ads--p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p className="items-right-ads--price">$299</p>
                         <figure>
                         <img src={images.GoPro()} alt=""/>
                         </figure>
