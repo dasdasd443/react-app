@@ -60,12 +60,12 @@ const Login = () => {
                 <section className="login-container">
                     <section className="login-container--text">
                         <section className="login-container--text__text-container">
-                            <a href="index.html">
+                            <Link to="/">
                                 <section className="login-container--text__text-container--title">
                                     <h1>RAKU</h1>
                                     <h1>TECH</h1>
                                 </section>
-                            </a>
+                            </Link>
                             <h1>Browse from over 500 devices in your area</h1>
                         </section>
                     </section>
