@@ -8,13 +8,13 @@ let initialState = [
 ]
 const updateQuantity = (state = initialState, action) => {
     switch(action.type){
-        case "INCREMENT":
+        case "CHECKOUT_PRODUCT_INCREMENT":
             return state.map(item => {
                 return (item.id === action.payload.id)?{...item, quantity: item.quantity + 1}: {...item};
             });
-        case "DECREMENT":
+        case "CHECKOUT_PRODUCT_DECREMENT":
             return state.map( item => {
-                return (item.id === action.payload.id)?{...item, quantity: item.quantity - 1}: {...item}
+                return (item.id === action.payload.id && item.quantity > 0)?{...item, quantity: item.quantity - 1}: {...item}
             });
         default:
             return state;

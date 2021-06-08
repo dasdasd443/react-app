@@ -1,15 +1,15 @@
-export const increment = (id) => {
+export const checkoutincrement = (id) => {
     return {
-        type: 'INCREMENT',
+        type: 'CHECKOUT_PRODUCT_INCREMENT',
         payload: {
             id: id
         }
     }
 }
 
-export const decrement = (id) => {
+export const checkoutdecrement = (id) => {
     return {
-        type: 'DECREMENT',
+        type: 'CHECKOUT_PRODUCT_DECREMENT',
         payload: {
             id: id
         }
