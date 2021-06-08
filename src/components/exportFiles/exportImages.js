@@ -41,8 +41,12 @@ import MasterCardLogo from '../../assets/mastercard.png';
 import AppleLogo from '../../assets/login_signup/apple-64.png';
 import FacebookLogo from '../../assets/login_signup/fb-64.png';
 import Background from '../../assets/login_signup/cover-img.jpg';
+import Phillips from '../../assets/phillips.png';
 
 export default class Images{
+    Phillips(){
+        return Phillips;
+    }
     Background() {
         return Background;
     }

@@ -1,0 +1,160 @@
+
+
+.page11{
+    display:flex;
+    flex-direction: column;
+    gap:7rem;
+    margin-bottom:20vh;
+    .items-list{
+        &__header,&__item{
+            display:flex;
+            gap:4rem;
+        }
+        &__header{
+            height:10vh;
+            place-items: center;
+            h1{
+                text-transform:uppercase;
+                font-weight: bold;
+                flex:2;
+                font-size:18px;
+            }
+            h1:nth-child(1){
+                flex:6;
+            }
+        }
+        &__item{
+            height:30vh;
+            place-items: center;
+            &--name{
+                flex:6;
+                display:flex;
+                gap:2rem;
+                place-items: center;
+                h1{
+                    font-size:16px;
+                    font-weight:600;
+                    line-height: 1.6;
+                }
+                .image-container{
+                    height:100px;
+                    width:150px;
+                    display:flex;
+                    justify-content: center;
+                    img{
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+                &__delete{
+                    position: relative;
+                    display: flex;
+                    place-items: center;
+                    i{
+                        position:relative;
+                        color:#FF4252;
+                        left:5px;
+                    }
+                    .background{
+                        position: absolute;
+                        background-color:#FF6875;
+                        height:20px;
+                        width: 20px;
+                        left:0;
+                        opacity: 5%;
+                        border-radius: 23px;
+                    }
+                }
+            }
+            h1,&--quantity{
+                flex:2;
+                font-size:16px;
+            }
+            &--quantity{
+                
+                form{
+                    position: relative;
+                    display:flex;
+                    input[type=number],input[type=number]:focus{
+                        outline:none;
+                        border:none;
+                        padding:15px;
+                        background-color: #F6F7F8;
+                        text-align: center;
+                        width:50px;
+                    }
+                    input[type=number]::-webkit-inner-spin-button{
+                        display:none;
+                    }
+                    button{
+                        width:50px;
+                        background-color: #F6F7F8;
+                        border: none;
+                        outline: none;
+                        i{
+                            color:#33A0FF;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.total{
+    display:flex;
+    .voucher{
+        flex:8;
+        form{
+            display:flex;
+            input[type=text],button{
+                border-radius: 0;
+                border:1px solid #F1F3F4;
+            }
+            input[type=text]{
+                padding:15px 80px 15px 15px;
+            }
+            input[type=text]:focus{
+                outline:none;
+            }
+            button{
+                padding:20px 40px;
+                background-color: #33A0FF;
+                font-size:14px;
+                color:white;
+            }
+        }
+    }
+    .checkout{
+        flex:4;
+        display:flex;
+        flex-direction: column;
+        gap:2rem;
+        &-container{
+            &__price-list{
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap:2rem;
+                li{
+                    display:flex;
+                    justify-content: space-between;
+                }
+            }
+            &__total{
+                display:flex;
+                justify-content: space-between;
+                font-size:30px;
+            }
+        }
+        button{
+            font-size:16px;
+            padding:20px;
+            color:white;
+            background-color: #33A0FF;
+            border:none;
+        }
+
+    }
+}

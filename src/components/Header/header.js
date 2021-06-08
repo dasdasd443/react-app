@@ -31,7 +31,7 @@ const Header = (props) =>
                     <FontAwesomeIcon icon={faUser}/><span >{user}</span>
                 </section>
                 <section className="header__account--item">
-                    <Link to="/"><FontAwesomeIcon icon={faShoppingBasket} />
+                    <Link to="/checkout"><FontAwesomeIcon icon={faShoppingBasket} />
                         <span>0 Items</span>
                         <small>$0.00</small>
                     </Link>    
