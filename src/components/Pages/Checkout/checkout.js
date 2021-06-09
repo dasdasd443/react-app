@@ -9,18 +9,25 @@ import './checkout.css';
 let images = new Images();
 const Checkout = () => {
     const products = useSelector(state => state.checkoutProducts);
+    let total= products.reduce( (total, elem) => {
+        return total + elem.unitPrice;
+    }, 0);
+    
+    console.log(total);
     const productsElement = products.map(item => 
-        <section key={item.id}><ItemList id={item.id} itemName={item.itemName} image={item.image} price={parseInt(item.price)} quantity={item.quantity}/><hr/></section>
+        <section key={item.id}><ItemList id={item.id} itemName={item.itemName} image={item.image} price={parseInt(item.price)} quantity={item.quantity} unitPrice={item.unitPrice}/><hr/></section>
     );
     return (
-        <div className='App'>
-                <div className='container'>
+            <div className='container'>
+                <div className='App'>
                     <Header/>
                     <Title/>
                     <Links/>
-                    <Navigation/>
+                </div>
+                <Navigation/>
+                <div className="App">
                     <section className='page11'>
-                        <div className="container items-list">
+                        <div className="App items-list">
                             <section className="items-list__header">
                                 <h1>Product</h1>
                                 <h1>Price</h1>
@@ -40,7 +47,7 @@ const Checkout = () => {
                         <form action="" className="checkout">
                             <section className="checkout-container">
                                 <ul className="checkout-container__price-list">
-                                    <li><span>Subtotal</span><span className='sub-total'>$0</span></li>
+                                    <li><span>Subtotal</span><span className='sub-total'>${total}</span></li>
                                     <li><span>Shipping fee</span><span>$20</span></li>
                                     <li><span>Coupon</span><span>No</span></li>
                                 </ul>
@@ -48,14 +55,14 @@ const Checkout = () => {
                             <hr/>
                             <section className="checkout-container__total">
                                 <h1>Total</h1>
-                                <h1 className="total-price">$20</h1>
+                                <h1 className="total-price">${total + 20}</h1>
                             </section>
                             <button>Checkout</button>
                         </form>
                         </div>
                     </section>
                 </div>
-        </div>
+            </div>
     );
 }
 

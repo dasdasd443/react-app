@@ -16,7 +16,9 @@ const ProductsPage = () => {
                     <span className="line-title"></span>
                     <Title/>
                     <Links/>
-                    <Navigation/>
+                </div>
+                <Navigation/>
+                <div className="App">
                     <section className="main">
                         <ProductInformation className="main__product-information"/>
                         <ProductBestSellers className="main__product-bestsellers"/>

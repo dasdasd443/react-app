@@ -3,10 +3,18 @@ import {faShoppingBasket, faSearch,faUser} from '@fortawesome/free-solid-svg-ico
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import HeaderCSS from './header.css';
+import {useSelector} from 'react-redux';
 
 
 const Header = (props) =>
 {
+    const products = useSelector(state => state.checkoutProducts);
+    const subTotal = products.reduce((total,curVal) => {
+        return total + curVal.unitPrice;
+    },0);
+    const numItems = products.reduce((total, curVal) => {
+        return total + curVal.quantity;
+    },0);
     const LogoutUser = () => {
         sessionStorage.removeItem("user");
         window.location.href = "/";
@@ -32,8 +40,8 @@ const Header = (props) =>
                 </section>
                 <section className="header__account--item">
                     <Link to="/checkout"><FontAwesomeIcon icon={faShoppingBasket} />
-                        <span>0 Items</span>
-                        <small>$0.00</small>
+                        <span>{numItems} Items</span>
+                        <small>${subTotal}.00</small>
                     </Link>    
                 </section>
                 <section className="header__account--item">
