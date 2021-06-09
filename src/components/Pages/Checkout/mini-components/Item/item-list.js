@@ -1,24 +1,21 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTimes, faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
-import {useState} from 'react';
+import {deleteItem} from '../../../../../store/action';
 import { useDispatch } from 'react-redux';
 import {checkoutdecrement, checkoutincrement} from '../../../../../store/action';
-const ItemList = ({id,itemName, image, price,quantity}) => {
+const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
     const dispatch = useDispatch();
 
     const updateQuantity = (e) => {
         console.log(e.target.value);
     }
 
-    const removeElement = () => {
-        //console.log(this);
-    }
     return (
         <section className="items-list__item">
                             <section className="items-list__item--name">
                                 <section className="items-list__item--name__delete">
-                                    <FontAwesomeIcon icon={faTimes} onClick={removeElement(this)}/>
-                                    <span className='background'></span>
+                                    <FontAwesomeIcon icon={faTimes} />
+                                    <span className='background' onClick={()=> dispatch(deleteItem(id))}></span>
                                 </section>
                                 <section className="image-container">
                                     <img src={image} alt=""/>
@@ -35,7 +32,7 @@ const ItemList = ({id,itemName, image, price,quantity}) => {
                                 </form>
                             </section>
                             <input type="hidden" name="" value="0" className="unit-price-hidden"/>
-                            <h1 className='unit-price'>$0</h1>
+                            <h1 className='unit-price'>${unitPrice}</h1>
                         </section>
     );
 }
