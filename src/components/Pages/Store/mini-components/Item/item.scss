@@ -7,6 +7,7 @@
     &-boxes{
         display: flex;
         position: relative;
+        justify-content: center;
         margin: 40px 0;
 
         &::after{
@@ -124,11 +125,11 @@
             h1{
                 font-size:42px;
                 font-weight:100;
-                opacity: 90%;
+                opacity: .9;
             }
             span{
                 font-size:16px;
-                opacity: 75%;
+                opacity: .75;
                 line-height: 1.6;
             }
             a{

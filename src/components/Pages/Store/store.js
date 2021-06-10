@@ -16,7 +16,7 @@ const Store = () => {
             </div>
             <Navigation/>
             <div className="App">
-                <div class="page9-container">
+                <div className="page9-container">
                     <Menu/>
                     <ItemStoreList/>
                 </div>
