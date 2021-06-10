@@ -1,4 +1,7 @@
-import Images from "../components/exportFiles/exportImages";
+import Images from "../../components/exportFiles/exportImages";
+import {useSelector} from 'react-redux';
+
+
 
 let images = new Images();
 
@@ -7,9 +10,12 @@ let initialState = [
     {id: 2,itemName: "Apple Macbook Pro", image: images.AppleMac(), price: 499, quantity: 0, unitPrice: 0}
 ]
 const updateQuantity = (state = initialState, action) => {
+    
     switch(action.type){
+        case "ADD_TO_CART":
+            state.push(action.payload.item);
+            return state;
         case "DELETE_PRODUCT_CHECKOUT":
-            console.log("yes");
             return state.filter(item => {
                 return item.id != action.payload.id;
             });
