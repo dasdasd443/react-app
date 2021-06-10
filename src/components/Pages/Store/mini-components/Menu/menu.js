@@ -1,11 +1,11 @@
 import './menu.css';
 const Menu = () => {
     return (
-        <section class="menu-container">
-            <section class="menu-container__accessories">
+        <section className="menu-container">
+            <section className="menu-container__accessories">
                 <h3>Accessories</h3>
-                <nav class="menu-container__accessories--categories">
-                    <ul class='menu-container__accessories--categories__links'>
+                <nav className="menu-container__accessories--categories">
+                    <ul className='menu-container__accessories--categories__links'>
                         <li><a href="">Apple Car</a><span>2</span></li>
                         <li><a href="">Air port & wireless</a><span>48</span></li>
                         <li><a href="">Cables & Docks</a><span>14</span></li>
@@ -16,18 +16,18 @@ const Menu = () => {
                     </ul>
                 </nav>
             </section>
-            <section class="menu-container__prices">
+            <section className="menu-container__prices">
                 <h3>Prices</h3>
-                <section class="menu-container__prices--price-range">
+                <section className="menu-container__prices--price-range">
                     <form action="">
-                            <label for="ranger"><span>Ranger: </span><span class='ranger-val'>1300</span></label>
+                            <label htmlFor="ranger"><span>Ranger: </span><span className='ranger-val'>1300</span></label>
                             <input type="range" name="ranger" id="ranger" min="0" max="1000000"/>
                     </form>
                 </section>
             </section>
-            <section class="menu-container__color">
+            <section className="menu-container__color">
                 <h3>Color</h3>
-                <section class="menu-container__color--color-selection">
+                <section className="menu-container__color--color-selection">
                     <form action="">
                         <input className='color-selector' type="radio" id="c006CFF" name="age" value="30"/>
                         <input className='color-selector' type="radio" id="cFC3E39" name="age" value="60"/>
@@ -38,11 +38,11 @@ const Menu = () => {
                     </form>
                 </section>
             </section>
-            <section class="menu-container__brand">
+            <section className="menu-container__brand">
                 <h3>Brands</h3>
-                <section class="menu-container__brand--brand">
-                    <nav class="menu-container__brand--brand__selection">
-                        <ul class='menu-container__brand--brand__selection__links'>
+                <section className="menu-container__brand--brand">
+                    <nav className="menu-container__brand--brand__selection">
+                        <ul className='menu-container__brand--brand__selection__links'>
                             <li><a href="">Apple</a><span>99</span></li>
                             <li><a href="">LG</a><span>99</span></li>
                             <li><a href="">Samsung</a><span>99</span></li>
@@ -51,7 +51,7 @@ const Menu = () => {
                     </nav>
                 </section>
             </section>
-            <section class="menu-container__more">
+            <section className="menu-container__more">
                 <h3>More</h3>
             </section>
         </section>

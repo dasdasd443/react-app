@@ -1,9 +1,14 @@
 import BestSellerCSS from './bestSeller.css';
 import Images from '../../exportFiles/exportImages';
 import BestSellerCard from '../../mini-component/best-seller-card';
+import {useSelector} from 'react-redux';
 
 let images = new Images();
 const BestSeller = () => {
+    const productList = useSelector(state => state.productList);
+    const productsElement = productList.map((elem,index) => {
+        return (index != 0)? <BestSellerCard id={elem.id} itemName={elem.itemName} price={elem.price} image={elem.image} hotornot="not"/>: <BestSellerCard id={elem.id} itemName={elem.itemName} price={elem.price} image={elem.image} hotornot="hot"/>
+    });
     return (
         <section className="bs-category" style={BestSellerCSS}>
             <div className="bs-category-title">
@@ -24,17 +29,7 @@ const BestSeller = () => {
             <div className="bs-category-gallery">
                 
                 <div className="bs-category-gallery--one">
-                    <BestSellerCard image={images.AppleMac()} hotornot="hot"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                </div>
-
-                <div className="bs-category-gallery--two">
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
-                    <BestSellerCard image={images.AppleMac()} hotornot="not"/>
+                    {productsElement}
                 </div>
             </div>
         

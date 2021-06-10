@@ -21,7 +21,7 @@ const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
                                 </section>
                                 <h1>{itemName}</h1>
                             </section>
-                            <h1>${price}</h1>
+                            <h1>${unitPrice}</h1>
                             <input type="hidden" className='price' value={price}/>
                             <section className="items-list__item--quantity">
                                 <form action="" onSubmit={ e => e.preventDefault()}>
@@ -31,7 +31,7 @@ const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
                                 </form>
                             </section>
                             <input type="hidden" name="" value="0" className="unit-price-hidden"/>
-                            <h1 className='unit-price'>${unitPrice}</h1>
+                            <h1 className='unit-price'>${price}</h1>
                         </section>
     );
 }

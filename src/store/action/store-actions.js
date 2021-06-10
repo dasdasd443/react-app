@@ -7,6 +7,8 @@ export const addToCart = (item) => {
     }
 }
 
+
+
 export const checkExist = (id) => {
     return {
         type:'CHECK_EXIST',
