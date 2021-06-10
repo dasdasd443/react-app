@@ -5,7 +5,7 @@ import {faShoppingCart, faHeart,faPlus,faMinus} from '@fortawesome/free-solid-sv
 import Images from '../../../../exportFiles/exportImages';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { minusQuantity , addQuantity} from '../../../../../store/current-product-actions';
+import { minusQuantity , addQuantity} from '../../../../../store/action/current-product-actions';
 
 
 const ProductInformation = () => {

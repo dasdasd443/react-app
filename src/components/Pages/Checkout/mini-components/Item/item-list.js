@@ -1,8 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTimes, faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
-import {deleteItem} from '../../../../../store/action';
 import { useDispatch } from 'react-redux';
-import {checkoutdecrement, checkoutincrement} from '../../../../../store/action';
+import {checkoutdecrement, checkoutincrement,deleteItem} from '../../../../../store/action/action';
 const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
     const dispatch = useDispatch();
 
