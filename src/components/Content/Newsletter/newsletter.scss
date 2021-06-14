@@ -1,11 +1,17 @@
 .newsletter{
     display:flex;
     justify-content: center;
+    position: absolute;
+    width:100%;
     &__background{
         position:fixed;
-        height:100%;
-        width:100%;
+        height:100vh;
+        width:100vw;
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
         z-index:2;
+        left: 0;
         /* The image used */
         background-color:black;
         opacity:.5;
@@ -15,11 +21,13 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    
     &__popup{
         box-shadow: 5px 5px 18px;
-        margin-top:20vh;
-        position: fixed;
+        margin:20vh 20vw;
+        position: absolute;
         background-color: white;
+        left:0;
         z-index:3;
         height:70vh;
         width:60vw;
@@ -40,11 +48,18 @@
                 font-size:15px;
             }
         }
+        @media screen and (max-width: 1295px){
+            &--img{
+                display:none;
+            }
+        }
+        
         &--content{
-            flex:6;
             display:flex;
+            flex:6;
             flex-direction: column;
             align-items: center;
+            height:100%;
             gap:3rem;
             padding:5em;
             h1{
@@ -84,10 +99,24 @@
             flex:6;
             img{
                 height:100%;
+                max-width:100%;
             }
+        }
+    }
+    @media screen and (max-width:800px){
+        &__popup{
+            width:100%;
+            margin:20vh 0;
         }
     }
 }
 .newsletter__popup .close:hover{
     background: black;
+}
+
+@media screen and (max-width:1021px){
+    .newsletter__background{
+        width:100%;
+        height:100%;
+    }
 }

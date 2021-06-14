@@ -2,6 +2,8 @@ import BestSellerCSS from './bestSeller.css';
 import Images from '../../exportFiles/exportImages';
 import BestSellerCard from '../../mini-component/best-seller-card';
 import {useSelector} from 'react-redux';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 let images = new Images();
 const BestSeller = () => {
@@ -13,6 +15,7 @@ const BestSeller = () => {
         <section className="bs-category" style={BestSellerCSS}>
             <div className="bs-category-title">
                 <h3 className="bs-category-title-h3">BEST SELLER</h3>
+                <FontAwesomeIcon icon={faBars}/>
             </div>
             <div className="bs-category-menu">
                 <nav className="bs-category-menu--nav" >
