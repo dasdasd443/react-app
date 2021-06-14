@@ -1,113 +1,182 @@
 .foot-sec1 {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
-  }
-  
-  .foot-sec1-fticons {
-    display: flex;
-  }
-  .foot-sec1-fticons-fb {
-    margin-right: 40px;
-    color: #385c8e;
-  }
-  .foot-sec1-fticons-twit {
-    color: #03a9f4;
-  }
-  
-  .foot-sec1-rakuinfo {
-    width: 30%;
-  }
-  .foot-sec1-rakuinfo-h3 {
-    color: #bdbdbd;
-    font-weight: bolder;
-  }
-  .foot-sec1-rakuinfo-p {
-    margin: 25px 0;
-  }
-  
-  .foot-sec1-follow {
-    width: 30%;
-    padding: 16px 0;
-  }
-  .foot-sec1-follow-h5 {
-    font-weight: bolder;
-  }
-  .foot-sec1-follow-p {
-    margin: 14px 0 30px 0;
-  }
-  
-  .foot-sec1-contact {
-    width: 30%;
-    padding: 16px 0;
-  }
-  .foot-sec1-contact-h5 {
-    font-weight: bolder;
-  }
-  .foot-sec1-contact-p {
-    margin: 12px 0;
-  }
-  .foot-sec1-contact-p span {
-    display: block;
-  }
-  
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 0;
+}
+
+.foot-sec1-fticons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.foot-sec1-fticons-fb {
+  margin-right: 40px;
+  color: #385c8e;
+}
+
+.foot-sec1-fticons-twit {
+  color: #03a9f4;
+}
+
+.foot-sec1-rakuinfo {
+  width: 30%;
+}
+
+.foot-sec1-rakuinfo-h3 {
+  color: #bdbdbd;
+  font-weight: bolder;
+}
+
+.foot-sec1-rakuinfo-p {
+  margin: 25px 0;
+}
+
+.foot-sec1-follow {
+  width: 30%;
+  padding: 16px 0;
+}
+
+.foot-sec1-follow-h5 {
+  font-weight: bolder;
+}
+
+.foot-sec1-follow-p {
+  margin: 14px 0 30px 0;
+}
+
+.foot-sec1-contact {
+  width: 30%;
+  padding: 16px 0;
+}
+
+.foot-sec1-contact-h5 {
+  font-weight: bolder;
+}
+
+.foot-sec1-contact-p {
+  margin: 12px 0;
+}
+
+.foot-sec1-contact-p span {
+  display: block;
+}
+
+.foot-sec2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 0;
+}
+
+.foot-sec2-information h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-information p {
+  margin: 8px 0;
+}
+
+.foot-sec2-services h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-services p {
+  margin: 8px 0;
+}
+
+.foot-sec2-extras h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-extras p {
+  margin: 8px 0;
+}
+
+.foot-sec2-myaccount h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-myaccount p {
+  margin: 8px 0;
+}
+
+.foot-sec2-usefullinks h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-usefullinks p {
+  margin: 8px 0;
+}
+
+.foot-sec2-ouroffers h5 {
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.foot-sec2-ouroffers p {
+  margin: 8px 0;
+}
+
+.foot-sec3 {
+  margin: 20px 0 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.foot-sec3-copyright {
+  color: #d9dee1;
+}
+
+.foot-sec3-paymentIcon {
+  gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 736px) {
   .foot-sec2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    padding: 40px 0;
+    gap: 1rem;
   }
-  .foot-sec2-information h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
+  .foot-sec2 p {
+    display: none;
   }
-  .foot-sec2-information p {
-    margin: 8px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .foot-sec1 p {
+    display: none;
   }
-  .foot-sec2-services h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
+  .foot-sec2 {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  .foot-sec2-services p {
-    margin: 8px 0;
-  }
-  .foot-sec2-extras h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
-  }
-  .foot-sec2-extras p {
-    margin: 8px 0;
-  }
-  .foot-sec2-myaccount h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
-  }
-  .foot-sec2-myaccount p {
-    margin: 8px 0;
-  }
-  .foot-sec2-usefullinks h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
-  }
-  .foot-sec2-usefullinks p {
-    margin: 8px 0;
-  }
-  .foot-sec2-ouroffers h5 {
-    margin-bottom: 15px;
-    font-weight: bolder;
-  }
-  .foot-sec2-ouroffers p {
-    margin: 8px 0;
-  }
-  
   .foot-sec3 {
-    margin: 20px 0 20px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
-  .foot-sec3-copyright {
-    color: #d9dee1;
-  }
-  .foot-sec3-paymentIcon {
-    gap: 20px;
-    display: flex;
-  }
+}
+/*# sourceMappingURL=footer.css.map */
