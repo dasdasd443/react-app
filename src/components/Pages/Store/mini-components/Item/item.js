@@ -4,10 +4,12 @@ import {faStar, faShoppingCart, faHeart, faCheck} from '@fortawesome/free-solid-
 import {useDispatch, useSelector} from 'react-redux';
 import {useState} from 'react';
 import {addToCart} from '../../../../../store/action/store-actions';
+import {addToFavorites, removeFromFavorites} from '../../../../../store/action/favorites-action';
 const Item = ({id,itemName, image, price}) => {
     const dispatch = useDispatch();
     const productList = useSelector(state => state.productList);
     const checkoutList = useSelector(state => state.checkoutProducts);
+    const favorites = useSelector(state => state.favorites);
     const addToCartFunc = (id) => {
         let [item] = productList.filter(item => item.id==id); 
         item = {...item, quantity: 1, unitPrice: item.price};
@@ -17,6 +19,20 @@ const Item = ({id,itemName, image, price}) => {
     const [addToCartButton, setAddToCartButton] = useState(
         (checkoutList.some(item => item.id == id)?<button className="items-container-menus-content--buttons--add"><FontAwesomeIcon icon={faCheck} /> Added to Cart</button>:<button className="enabled items-container-menus-content--buttons--add" onClick={() => addToCartFunc(id)}><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button>)
     );
+    const [addToFavoritesButton, setAddToFavoritesButton] = useState(
+        (favorites.some(item => item.id == id)? <button className="items-container-menus-content--buttons--heart favorite" onClick={ ()=>removeFromFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>: <button className="items-container-menus-content--buttons--heart" onClick={() => addToFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
+    );
+    const removeFromFavoritesFunc = (id) => {
+        setAddToFavoritesButton(<button className="items-container-menus-content--buttons--heart" onClick={() => addToFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
+        dispatch(removeFromFavorites(id));
+    }
+
+    const addToFavoritesFunc = (id) => {
+        
+        let [item] = productList.filter(item => item.id==id);
+        setAddToFavoritesButton(<button className="items-container-menus-content--buttons--heart favorite" onClick={ ()=>removeFromFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
+        dispatch(addToFavorites(item));
+    }
     return (
         <div>
             <div className="items-container-menus-boxes">
@@ -47,7 +63,7 @@ const Item = ({id,itemName, image, price}) => {
                     </p>
                     <div className="items-container-menus-content--buttons">
                     {addToCartButton}
-                    <button className="items-container-menus-content--buttons--heart"><FontAwesomeIcon icon={faHeart}/></button>
+                    {addToFavoritesButton}
                     </div>
                 </div>
             </div>
