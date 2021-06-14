@@ -7,7 +7,8 @@ import {combineReducers} from 'redux';
 let reducers = combineReducers({
     checkoutProducts: updateQuantity,
     currentProduct: UpdateCurrentProduct,
-    productList: ProductList
+    productList: ProductList,
+    favorites: Favorites
 });
 
 export default reducers;

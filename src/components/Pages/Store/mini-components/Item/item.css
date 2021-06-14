@@ -130,6 +130,10 @@
   color: white;
 }
 
+.items-container-menus-content--buttons .favorite {
+  color: red !important;
+}
+
 .items-container {
   -webkit-box-flex: 9;
       -ms-flex: 9;

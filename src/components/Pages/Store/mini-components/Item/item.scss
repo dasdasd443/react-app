@@ -87,6 +87,7 @@
                 i{
                     margin-right: 10px;
                 }
+                
             }
             .enabled:hover{
                 background-color:#70bbfb;
@@ -99,10 +100,14 @@
                 background-color: #eaf5fe;
                 border-radius: 5px;
                 font-size: 12pt;
+                
             }
             &--heart:hover{
                 background-color:#70bbfb;
                 color:white;
+            }
+            .favorite{
+                color: red !important;;
             }
         }
     }

@@ -45,6 +45,9 @@
                 background-color: white;
                 color:#33A0FF;
                 // border: 1px solid red;
+                .favorite{
+                    color: red !important;
+                }
                 .overlay-icon{
                     border:1px solid #33A0FF;
                     border-radius:50%;
@@ -55,6 +58,7 @@
                     background-color:#33A0FF;
                     color:white;
                 }
+                
             }
 
     }

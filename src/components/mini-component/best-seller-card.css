@@ -75,6 +75,10 @@
   color: #33A0FF;
 }
 
+.bs-category-gallery--one--box--image--overlay .favorite {
+  color: red !important;
+}
+
 .bs-category-gallery--one--box--image--overlay .overlay-icon {
   border: 1px solid #33A0FF;
   border-radius: 50%;

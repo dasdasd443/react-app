@@ -6,3 +6,12 @@ export const addToFavorites = (item) => {
         }
     }
 }
+
+export const removeFromFavorites = (id) => {
+    return {
+        type: 'REMOVE_FROM_FAVORITES',
+        payload: {
+            id
+        }
+    }
+}
