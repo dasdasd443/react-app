@@ -6,8 +6,11 @@ import {useState} from 'react';
 import {addToCart} from '../../../../../store/action/store-actions';
 import {Link} from 'react-router-dom';
 import {addToFavorites, removeFromFavorites} from '../../../../../store/action/favorites-action';
-const Item = ({id,itemName, image, price}) => {
+const Item = ({id,description, itemName, image, price}) => {
     const dispatch = useDispatch();
+    const defaultText = `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    Doloremque harum magni eum iure dolores tempora facere blanditiis assumenda! Dolorem iste obcaecati
+    possimus.`;
     const productList = useSelector(state => state.productList);
     const checkoutList = useSelector(state => state.checkoutProducts);
     const favorites = useSelector(state => state.favorites);
@@ -58,9 +61,7 @@ const Item = ({id,itemName, image, price}) => {
                         <p className="bs-category-gallery--one--box--price--enabled" >${price}</p>
                         <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                     </div>
-                    <p className="items-container-menus-content--p">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Doloremque harum magni eum iure dolores tempora facere blanditiis assumenda! Dolorem iste obcaecati
-                        possimus.
+                    <p className="items-container-menus-content--p">{description || defaultText}
                     </p>
                     <div className="items-container-menus-content--buttons">
                     {addToCartButton}

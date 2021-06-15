@@ -6,8 +6,6 @@ import {useSelector} from 'react-redux';
 let images = new Images();
 
 let initialState = [
-    {id: 1,itemName: "Philips Hue 7W BR30 Connected Downlight Lamp",image: images.Phillips(), price: 499, quantity: 0, unitPrice: 0},
-    {id: 2,itemName: "Apple Macbook Pro", image: images.AppleMac(), price: 499, quantity: 0, unitPrice: 0}
 ]
 const updateQuantity = (state = initialState, action) => {
     
