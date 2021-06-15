@@ -28,7 +28,7 @@
           justify-content: center;
   padding: 20px;
   width: 250px;
-  height: 350px;
+  height: 450px;
 }
 
 .bs-category-gallery--one--box--image {
@@ -36,7 +36,8 @@
 }
 
 .bs-category-gallery--one--box--image img {
-  width: 200px;
+  width: 150px;
+  height: 150px;
   -webkit-transition: .8s ease;
   transition: .8s ease;
 }

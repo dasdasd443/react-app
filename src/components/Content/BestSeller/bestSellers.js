@@ -9,7 +9,7 @@ let images = new Images();
 const BestSeller = () => {
     const productList = useSelector(state => state.productList);
     const productsElement = productList.map((elem,index) => {
-        return (index != 0)? <BestSellerCard key={elem.id} id={elem.id} itemName={elem.itemName} price={elem.price} image={elem.image} hotornot="not"/>: <BestSellerCard key={elem.id} id={elem.id} itemName={elem.itemName} price={elem.price} image={elem.image} hotornot="hot"/>
+        return (index != 0)? <BestSellerCard key={elem.id} id={elem.id} itemName={elem.title || elem.itemName} price={elem.price} image={elem.image} hotornot="not"/>: <BestSellerCard key={elem.id} id={elem.id} itemName={elem.itemName} price={elem.price} image={elem.image} hotornot="hot"/>
     });
     return (
         <section className="bs-category" style={BestSellerCSS}>
