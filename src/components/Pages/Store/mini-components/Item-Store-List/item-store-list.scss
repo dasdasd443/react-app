@@ -2,7 +2,9 @@
     // border: 1px solid red;
     width: 70%;
     margin-left: auto;
-
+    display:flex;
+    flex-direction: column;
+    gap:4rem;
     &-menusettings{
         background-color: #fbf9f9;
         width: 100%;

@@ -86,6 +86,8 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 0 auto;
+  position: relative;
+  padding: 50px 0;
 }
 
 .bs-category-gallery--one--box {

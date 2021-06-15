@@ -1,14 +1,38 @@
 import Images from '../../../../exportFiles/exportImages';
 import Item from '../Item/item';
-import {useSelector} from 'react-redux';
+import {useSelector,useDispatch} from 'react-redux';
+import {useState} from 'react';
+import {setInitialProducts} from '../../../../../store/action/store-actions';
+import {SolarSystemLoading} from 'react-loadingg';
 import './item-store-list.css';
 let images = new Images();
 const ItemStoreList = () => {
     const productList = useSelector(state => state.productList);
-    
-    const productListElements = productList.map(item => {
+    const [productListElements,setproductListElements] = useState((productList)? productList.map(item => {
         return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={parseInt(item.price)} id={item.id}/>
-    });
+    }): ''); 
+    const [isLoaded, setisLoaded] = useState(useSelector(state => state.productList));
+    const [products,setProducts] = useState(useSelector(state => state.productList));
+    const dispatch = useDispatch();
+    async function getData(){
+        const response = await fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        .then(json=>json);
+        setProducts(response);
+        return response;
+    }
+    if(!isLoaded){
+        getData();
+        if(products){
+            setisLoaded(true);
+            setProducts(products);
+            dispatch(setInitialProducts(products));
+            setproductListElements(products.map(item => {
+                return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={parseInt(item.price)} id={item.id}/>
+            }));
+        }
+    }
+    
     return (
         <section className="items-container">
             <section className="banner-3">
@@ -39,7 +63,7 @@ const ItemStoreList = () => {
                 </div>
             </div>
             <div className="items-container-menus">
-                {productListElements}
+                {(products)? productListElements: <SolarSystemLoading/>}
             </div>
 
             <div className="items-container-menuNumbers">
