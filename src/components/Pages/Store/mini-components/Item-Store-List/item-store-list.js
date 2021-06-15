@@ -7,7 +7,7 @@ const ItemStoreList = () => {
     const productList = useSelector(state => state.productList);
     
     const productListElements = productList.map(item => {
-        return <Item key={item.id} itemName={item.itemName} image={item.image} price={parseInt(item.price)} id={item.id}/>
+        return <Item key={item.id} itemName={item.itemName || item.title} image={item.image} price={parseInt(item.price)} id={item.id}/>
     });
     return (
         <section className="items-container">

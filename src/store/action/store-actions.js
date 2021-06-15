@@ -7,7 +7,14 @@ export const addToCart = (item) => {
     }
 }
 
-
+export const setInitialProducts = (products) => {
+    return {
+        type:'SET_INIT',
+        payload: {
+            products
+        }
+    }
+}
 
 export const checkExist = (id) => {
     return {

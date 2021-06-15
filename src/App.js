@@ -10,6 +10,7 @@ import ProductItem from './components/Pages/Product-Item/product-item';
 import {Route, BrowserRouter as Router,Switch} from 'react-router-dom';
 
 function App() {
+  
   return (
     <Router>
       <Switch>
