@@ -43,7 +43,7 @@ const Index = () => {
                 </div>
                 <Banner/>
                 <div className = "App">
-                    <BestSellers/>
+                    {(isLoaded)? <BestSellers/>: "Loading"}
                 </div>
                 <Banner2/>
                 <div className = "App">
