@@ -12,7 +12,7 @@ const Item = ({id,itemName, image, price}) => {
     const favorites = useSelector(state => state.favorites);
     const addToCartFunc = (id) => {
         let [item] = productList.filter(item => item.id==id); 
-        item = {...item, quantity: 1, unitPrice: item.price};
+        item = {...item, quantity: 0, unitPrice: 0};
         setAddToCartButton(<button className="items-container-menus-content--buttons--add"><FontAwesomeIcon icon={faCheck} /> Added to Cart</button>)
         dispatch(addToCart(item));
     }

@@ -12,7 +12,7 @@ const BestSellerCard = ({id,itemName, price, image,hotornot}) => {
     const favorites = useSelector(state => state.favorites);
     const addToCartFunc = (id) => {
         let [item] = productList.filter(item => item.id==id); 
-        item = {...item, quantity: 1, unitPrice: item.price};
+        item = {...item, quantity: 0, unitPrice: 0};
         setAddToCartButton(<FontAwesomeIcon icon={faCheck} className='overlay-icon disabled'/>)
         dispatch(addToCart(item));
     }
