@@ -14,7 +14,9 @@ const updateQuantity = (state = initialState, action) => {
     switch(action.type){
         case "ADD_TO_CART":
             state.push(action.payload.item);
-            return state;
+            return state.map(item => {
+                return (item.id === action.payload.item.id)?{...item,quantity: item.quantity + 1,unitPrice: (item.quantity + 1) * item.price} : {...item};
+            });
         case "DELETE_PRODUCT_CHECKOUT":
             return state.filter(item => {
                 return item.id != action.payload.id;
