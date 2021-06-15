@@ -4,6 +4,7 @@ import {faStar, faShoppingCart, faHeart, faCheck} from '@fortawesome/free-solid-
 import {useDispatch, useSelector} from 'react-redux';
 import {useState} from 'react';
 import {addToCart} from '../../../../../store/action/store-actions';
+import {Link} from 'react-router-dom';
 import {addToFavorites, removeFromFavorites} from '../../../../../store/action/favorites-action';
 const Item = ({id,itemName, image, price}) => {
     const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const Item = ({id,itemName, image, price}) => {
                     <img src={image} alt=""/>
                 </figure>
                 <div className="items-container-menus-content">
-                    <h3 className="items-container-menus-content--h3">{itemName}</h3>
+                    <h3 className="items-container-menus-content--h3"><Link to={`/product-item/${id}`}>{itemName}</Link></h3>
                     <div className="items-container-menus-content--smallDetails">
                         <div className="items-container-menus-content--smallDetails--str">
                             <FontAwesomeIcon icon={faStar}/>

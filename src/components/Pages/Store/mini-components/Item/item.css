@@ -45,6 +45,11 @@
   font-weight: bolder;
 }
 
+.items-container-menus-content--h3 a {
+  color: black;
+  text-decoration: none;
+}
+
 .items-container-menus-content--smallDetails {
   display: -webkit-box;
   display: -ms-flexbox;
