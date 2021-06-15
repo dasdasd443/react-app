@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {addToCart} from '../../store/action/store-actions';
 import {addToFavorites, removeFromFavorites} from '../../store/action/favorites-action';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './best-seller-card.css';
 const BestSellerCard = ({id,itemName, price, image,hotornot}) => {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const BestSellerCard = ({id,itemName, price, image,hotornot}) => {
                 {addToCartButton}
             </div>
             </div>
-            <h4 className="bs-category-gallery--one--box--h4">{itemName}</h4>
+            <h4 className="bs-category-gallery--one--box--h4"><Link to={`/product-item/${id}`}>{itemName}</Link></h4>
             <div className="bs-category-gallery--one--box--stars">
             <FontAwesomeIcon icon={faStar}/>
                 <FontAwesomeIcon icon={faStar}/>

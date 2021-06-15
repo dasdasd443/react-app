@@ -95,6 +95,11 @@
   margin: 20px 0;
 }
 
+.bs-category-gallery--one--box--h4 a {
+  color: black;
+  text-decoration: none;
+}
+
 .bs-category-gallery--one--box--stars {
   display: -webkit-box;
   display: -ms-flexbox;
