@@ -6,6 +6,7 @@ import Login from './components/Pages/Login/login';
 import Signup from './components/Pages/Signup/signup';
 import Checkout from './components/Pages/Checkout/checkout';
 import Store from './components/Pages/Store/store';
+import ProductItem from './components/Pages/Product-Item/product-item';
 import {Route, BrowserRouter as Router,Switch} from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" component={Signup}/>
         <Route path="/checkout" component={Checkout}/>
         <Route path="/store" component={Store}/>
+        <Route path="/product-item/:id" component={ProductItem}/>
       </Switch>
     </Router>
   );
