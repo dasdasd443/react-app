@@ -15,7 +15,7 @@ const Checkout = () => {
     
     console.log(total);
     const productsElement = products.map(item => 
-        <section key={item.id}><ItemList id={item.id} itemName={item.itemName} image={item.image} price={parseInt(item.price)} quantity={item.quantity} unitPrice={item.unitPrice}/><hr/></section>
+        <section key={item.id}><ItemList id={item.id} itemName={item.itemName} image={item.image} price={item.price.toFixed(2)} quantity={item.quantity} unitPrice={item.unitPrice}/><hr/></section>
     );
     return (
             <div className='container'>

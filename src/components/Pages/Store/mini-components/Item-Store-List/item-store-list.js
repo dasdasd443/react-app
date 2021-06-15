@@ -9,7 +9,7 @@ let images = new Images();
 const ItemStoreList = () => {
     const productList = useSelector(state => state.productList);
     const [productListElements,setproductListElements] = useState((productList)? productList.map(item => {
-        return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={parseInt(item.price)} id={item.id}/>
+        return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} id={item.id}/>
     }): ''); 
     const [isLoaded, setisLoaded] = useState(useSelector(state => state.productList));
     const [products,setProducts] = useState(useSelector(state => state.productList));
@@ -28,7 +28,7 @@ const ItemStoreList = () => {
             setProducts(products);
             dispatch(setInitialProducts(products));
             setproductListElements(products.map(item => {
-                return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={parseInt(item.price)} id={item.id}/>
+                return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} id={item.id}/>
             }));
         }
     }

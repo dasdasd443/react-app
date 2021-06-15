@@ -58,7 +58,7 @@
           flex-direction: column;
   gap: 4rem;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
 .banner__flag .flag__text h1 {
