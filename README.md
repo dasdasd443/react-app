@@ -15,8 +15,8 @@ Individual Products Page - You can view this page by clicking the name of each p
 1. Added loading animations when calling the fakestore API, npm package for loading animation used is the react-loadingg
 2. Home, Accessories, and Individual products page now calls the API to get data when the current product list is empty. It is only called once so that the website will not call the API everytime the user goes to another page.
 3. Updated the functionalities of each individual product page.
-4. the product page on Store is still not functioning (substituted by the individual products page). The real individual product page is accessed by clicking the name of a product.
-6. Add to cart and add to favorites are functioning (still some bugs for add to cart button and add to favorite button). Items added to cart can be viewed through the checkout page. Favorite items cannot be viewed, but it can be known if you favorite an item by checking the heart icon. If it is red, then it is a favorite item and vice versa.
+4. the product page on Store is not functioning (substituted by the individual products page). The real individual product page is accessed by clicking the name of a product.
+6. Add to cart and add to favorites are functioning. Items added to cart can be viewed through the checkout page. Favorite items cannot be viewed, but it can be known if you favorite an item by checking the heart icon. If it is red, then it is a favorite item and vice versa.
 
 # Getting Started with Create React App
 
