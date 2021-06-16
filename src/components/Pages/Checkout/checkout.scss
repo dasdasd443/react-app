@@ -6,6 +6,17 @@
     gap:7rem;
     margin-bottom:20vh;
     .items-list{
+        div{
+            h1{
+                width:100%;
+                text-align: center;
+                padding:50px;
+                a{
+                    color:#33A0FF;
+                    text-decoration: none;
+                }
+            }
+        }
         &__header,&__item{
             display:flex;
             gap:4rem;

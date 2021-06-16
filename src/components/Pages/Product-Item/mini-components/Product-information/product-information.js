@@ -5,15 +5,18 @@ import {faShoppingCart, faHeart,faPlus,faMinus,faStar,faCheck} from '@fortawesom
 import Images from '../../../../exportFiles/exportImages';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { minusQuantity , addQuantity} from '../../../../../store/action/current-product-actions';
 import { SolarSystemLoading } from 'react-loadingg';
 import { addToCart } from '../../../../../store/action/store-actions';
+import { addToFavorites, removeFromFavorites } from '../../../../../store/action/favorites-action';
 
 const ProductInformation = ({id}) => {
     const products = useSelector(state => state.productList);
+    const checkoutList = useSelector(state => state.checkoutProducts);
+    const favorites = useSelector(state => state.favorites);
     const [curProduct,setcurProduct] = useState(0);
     const [isLoaded, setisLoaded] = useState(false);
-    const [isAdded, setisAdded] = useState(false);
+    const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id, id))?true:false);
+    const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id, id))?true:false);
     const dispatch = useDispatch();
 
     if(products && !isLoaded){
@@ -39,7 +42,16 @@ const ProductInformation = ({id}) => {
         dispatch(addToCart(item));
     }
     
-    
+    const removeFromFavoritesFunc = (id) => {
+        setisFavorite(false);
+        dispatch(removeFromFavorites(id));
+    }
+
+    const addToFavoritesFunc = (item) => {
+        
+        setisFavorite(true);
+        dispatch(addToFavorites(item));
+    }
     
     return (
             <section className="items-left" style={ProductInformationCSS}>
@@ -129,9 +141,10 @@ const ProductInformation = ({id}) => {
                             <button className="numOrder--add" onClick={()=>setcurProduct({...curProduct, quantity: curProduct.quantity + 1})}><FontAwesomeIcon icon={faPlus}/></button>
                             </div>
                             <div className="buttonCartheart">
-                                {(!isAdded)?    <button className="buttonCartheart-add" onClick={()=> addToCartFunc(curProduct)}><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>:
-                                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faCheck}/> Add to Cart</button>}
-                                <button className="buttonCartheart-heart"><FontAwesomeIcon icon={faHeart}/></button>
+                                {(!isAdded)?    <button className="buttonCartheart-add enabled" onClick={()=> addToCartFunc(curProduct)}><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>:
+                                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faCheck}/> Added to Cart</button>}
+                                {(!isFavorite)?  <button className="buttonCartheart-heart enabled" onClick={() => addToFavoritesFunc(curProduct)}><FontAwesomeIcon icon={faHeart}/></button>: 
+                                                <button className="buttonCartheart-heart enabled favorite" onClick={()=> removeFromFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart}/></button>}
                                 </div>
                         </div>
                     </div>

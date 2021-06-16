@@ -349,6 +349,15 @@ input[type="radio"] {
   outline: none;
 }
 
+.buttonCartheart .enabled:hover {
+  background-color: #33A0FF;
+  color: white;
+}
+
+.buttonCartheart .favorite, .buttonCartheart .favorite:hover {
+  color: red;
+}
+
 .socialmedia {
   display: -webkit-box;
   display: -ms-flexbox;

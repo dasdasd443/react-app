@@ -10,6 +10,17 @@
   margin-bottom: 20vh;
 }
 
+.page11 .items-list div h1 {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+.page11 .items-list div h1 a {
+  color: #33A0FF;
+  text-decoration: none;
+}
+
 .page11 .items-list__header, .page11 .items-list__item {
   display: -webkit-box;
   display: -ms-flexbox;
