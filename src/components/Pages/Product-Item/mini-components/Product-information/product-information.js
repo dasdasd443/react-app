@@ -15,10 +15,9 @@ const ProductInformation = ({id}) => {
     const favorites = useSelector(state => state.favorites);
     const [curProduct,setcurProduct] = useState(0);
     const [isLoaded, setisLoaded] = useState(false);
-    const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id, id))?true:false);
-    const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id, id))?true:false);
+    const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id==id))?true:false);
+    const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id==id))?true:false);
     const dispatch = useDispatch();
-
     if(products && !isLoaded){
         let [item] = products.filter(item => item.id == id);
         setcurProduct({...item,quantity: 1});
