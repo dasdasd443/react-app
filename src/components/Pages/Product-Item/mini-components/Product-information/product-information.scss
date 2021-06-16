@@ -286,6 +286,13 @@ input[type="radio"] {
             outline: none;
         }
     }
+    .enabled:hover{
+        background-color:#33A0FF;
+        color:white;
+    }
+    .favorite,.favorite:hover{
+        color:red;
+    }
 }
 .socialmedia{
     display: flex;

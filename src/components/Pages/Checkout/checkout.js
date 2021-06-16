@@ -5,6 +5,7 @@ import Navigation from '../../Header/Navigation/navigation';
 import Images from '../../exportFiles/exportImages';
 import ItemList from './mini-components/Item/item-list';
 import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './checkout.css';
 let images = new Images();
 const Checkout = () => {
@@ -35,7 +36,9 @@ const Checkout = () => {
                                 <h1>Unit Price</h1>
                             </section>
                             <hr/>
-                            {productsElement}
+                            <div>
+                            {(productsElement.length == 0)? <h1>Your cart is Empty! Click <Link to='/store'>here</Link> to shop!</h1>: productsElement}
+                            </div>
                         </div>
                         <div className="total">
                         <section className="voucher">
