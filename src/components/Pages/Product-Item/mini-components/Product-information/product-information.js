@@ -1,26 +1,49 @@
 import ProductInformationCSS from './product-information.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons';
-import {faShoppingCart, faHeart,faPlus,faMinus,faStar} from '@fortawesome/free-solid-svg-icons';
+import {faShoppingCart, faHeart,faPlus,faMinus,faStar,faCheck} from '@fortawesome/free-solid-svg-icons';
 import Images from '../../../../exportFiles/exportImages';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { minusQuantity , addQuantity} from '../../../../../store/action/current-product-actions';
-
+import { SolarSystemLoading } from 'react-loadingg';
+import { addToCart } from '../../../../../store/action/store-actions';
 
 const ProductInformation = ({id}) => {
-    let images = new Images();
     const products = useSelector(state => state.productList);
-    let [curProduct] = products.filter(item => item.id == id);
-    curProduct = {...curProduct, quantity: 0};
-    console.log(curProduct);
+    const [curProduct,setcurProduct] = useState(0);
+    const [isLoaded, setisLoaded] = useState(false);
+    const [isAdded, setisAdded] = useState(false);
     const dispatch = useDispatch();
-    const [quantity, setQuantity] = useState(0);
-    const [color,setColor] = useState("Black");
-    const [product_color, setProduct_color] = useState(2);
+
+    if(products && !isLoaded){
+        let [item] = products.filter(item => item.id == id);
+        setcurProduct({...item,quantity: 1});
+        setisLoaded(true);
+    }else{
+        async function getData(){
+            const response = await fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(res=>res.json())
+            .then(json=>json)
+            setisLoaded(true);
+            setcurProduct({...response, quantity: 1});
+        }
+        if(!isLoaded){
+            getData();
+        }
+    }
+
+    const addToCartFunc = (item) => {
+        item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};
+        setisAdded(true);
+        dispatch(addToCart(item));
+    }
+    
+    
     
     return (
             <section className="items-left" style={ProductInformationCSS}>
+                {(curProduct)? <div>
                 <div className="items-left-details">
                     <div className="items-left-details--productImages">
                         <figure className="items-left-details--productImages--largeView">
@@ -64,27 +87,27 @@ const ProductInformation = ({id}) => {
                         <div className="color">
                             <label htmlFor="" className="color-label">Select Color :</label> 
                             <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() =>{setColor("Pink");setProduct_color(0)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="pink"></span>
                                 </label>
                                 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Red"); setProduct_color(1)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="red"></span>
                                 </label>
                                 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Black"); setProduct_color(2)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="black"></span>
                                 </label>
 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("White"); setProduct_color(3)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="white"></span>
                                 </label>
 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Brown"); setProduct_color(4)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="brown"></span>
                                 </label>
                         </div>
@@ -100,13 +123,14 @@ const ProductInformation = ({id}) => {
                         <hr/>
                         <div className="bottomOptions">
                             <div className="numOrder">
-                            <button className="numOrder--sub" onClick={() => dispatch(minusQuantity(curProduct.id))}><FontAwesomeIcon icon={faMinus}/></button>
+                            <button className="numOrder--sub"onClick={()=>setcurProduct({...curProduct, quantity: (curProduct.quantity > 0)? curProduct.quantity - 1: curProduct.quantity})} ><FontAwesomeIcon icon={faMinus}/></button>
                             <span className="numOrder--value">{curProduct.quantity}</span>
                             <input className="numOrder--value__input" type="hidden" value={curProduct.quantity}/>
-                            <button className="numOrder--add" onClick={() => dispatch(addQuantity(curProduct.id))}><FontAwesomeIcon icon={faPlus}/></button>
+                            <button className="numOrder--add" onClick={()=>setcurProduct({...curProduct, quantity: curProduct.quantity + 1})}><FontAwesomeIcon icon={faPlus}/></button>
                             </div>
                             <div className="buttonCartheart">
-                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>
+                                {(!isAdded)?    <button className="buttonCartheart-add" onClick={()=> addToCartFunc(curProduct)}><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>:
+                                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faCheck}/> Add to Cart</button>}
                                 <button className="buttonCartheart-heart"><FontAwesomeIcon icon={faHeart}/></button>
                                 </div>
                         </div>
@@ -129,6 +153,7 @@ const ProductInformation = ({id}) => {
                         {curProduct.description}
                     </p>
                 </div>
+                </div>: <SolarSystemLoading/>}
             </section>
     );
 }

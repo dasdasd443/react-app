@@ -47,7 +47,7 @@ const Checkout = () => {
                         <form action="" className="checkout">
                             <section className="checkout-container">
                                 <ul className="checkout-container__price-list">
-                                    <li><span>Subtotal</span><span className='sub-total'>${total}</span></li>
+                                    <li><span>Subtotal</span><span className='sub-total'>${total.toFixed(2)}</span></li>
                                     <li><span>Shipping fee</span><span>$20</span></li>
                                     <li><span>Coupon</span><span>No</span></li>
                                 </ul>
@@ -55,7 +55,7 @@ const Checkout = () => {
                             <hr/>
                             <section className="checkout-container__total">
                                 <h1>Total</h1>
-                                <h1 className="total-price">${total + 20}</h1>
+                                <h1 className="total-price">${(total + 20).toFixed(2)}</h1>
                             </section>
                             <button>Checkout</button>
                         </form>

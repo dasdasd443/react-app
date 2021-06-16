@@ -1,6 +1,7 @@
 .items-left{
     width: 75%;
     // border: 1px solid red;
+    position:relative;
 }
 .items-left-details{
     display: flex;
@@ -237,6 +238,9 @@ input[type="radio"] {
         padding: 10px 14px;
         font-size: 10pt;
         font-weight: bolder;
+        display:flex;
+        align-items: center;
+        justify-content: center;
     }
     &--add{
         color: #33A0FF;
@@ -255,13 +259,13 @@ input[type="radio"] {
     display: flex;
 
     &-add{
-        padding: 10px;
+        padding: 20px;
         margin-right: 10px;
         border: none;
         color: #33A0FF;
         background-color: #eaf5fe;
-        border-radius: 3px;
-        font-size: 10pt;
+        border-radius: 5px;
+        font-size: 12pt;
 
         i{
             margin-right: 10px;
@@ -271,12 +275,12 @@ input[type="radio"] {
         }
     }
     &-heart{
-        padding: 10px;
+        padding: 20px;
         border: none;
         color: #33A0FF;
         background-color: #eaf5fe;
-        border-radius: 3px;
-        font-size: 10pt;
+        border-radius: 5px;
+        font-size: 12pt;
 
         &:focus{
             outline: none;
