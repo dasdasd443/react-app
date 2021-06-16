@@ -4,7 +4,8 @@ let initialState = {
     color: "Black",
     size: "XS",
     favorite: 0,
-    quantity: 0
+    quantity: 0,
+    price: 499
 }
 const updateCurrentProductQuantity = (state = initialState, action) => {
     switch(action.type){

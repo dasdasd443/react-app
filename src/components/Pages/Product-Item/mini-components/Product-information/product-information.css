@@ -1,5 +1,6 @@
 .items-left {
   width: 75%;
+  position: relative;
 }
 
 .items-left-details {
@@ -287,6 +288,15 @@ input[type="radio"] {
   padding: 10px 14px;
   font-size: 10pt;
   font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .numOrder--add {
@@ -309,13 +319,13 @@ input[type="radio"] {
 }
 
 .buttonCartheart-add {
-  padding: 10px;
+  padding: 20px;
   margin-right: 10px;
   border: none;
   color: #33A0FF;
   background-color: #eaf5fe;
-  border-radius: 3px;
-  font-size: 10pt;
+  border-radius: 5px;
+  font-size: 12pt;
 }
 
 .buttonCartheart-add i {
@@ -327,12 +337,12 @@ input[type="radio"] {
 }
 
 .buttonCartheart-heart {
-  padding: 10px;
+  padding: 20px;
   border: none;
   color: #33A0FF;
   background-color: #eaf5fe;
-  border-radius: 3px;
-  font-size: 10pt;
+  border-radius: 5px;
+  font-size: 12pt;
 }
 
 .buttonCartheart-heart:focus {
