@@ -5,9 +5,6 @@ import Links from '../../Header/Links/links';
 import Navigation from '../../Header/Navigation/navigation';
 import Menu from './mini-components/Menu/menu';
 import ItemStoreList from './mini-components/Item-Store-List/item-store-list';
-import {useSelector, useDispatch} from 'react-redux';
-import {useState} from 'react';
-import {setInitialProducts} from '../../../store/action/store-actions';
 
 const Store = () => {
     return (

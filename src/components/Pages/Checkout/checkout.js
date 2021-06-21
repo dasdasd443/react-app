@@ -5,18 +5,18 @@ import Navigation from '../../Header/Navigation/navigation';
 import Images from '../../exportFiles/exportImages';
 import ItemList from './mini-components/Item/item-list';
 import {useSelector} from 'react-redux';
+import { useCallback } from 'react';
 import {Link} from 'react-router-dom';
 import './checkout.css';
 let images = new Images();
 const Checkout = () => {
     const products = useSelector(state => state.checkoutProducts);
-    let total= products.reduce( (total, elem) => {
+    let total= products.reduce( useCallback((total, elem) => {
         return total + elem.unitPrice;
-    }, 0);
+    }), 0);
     
-    console.log(total);
-    const productsElement = products.map(item => 
-        <section key={item.id}><ItemList id={item.id} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} quantity={item.quantity} unitPrice={item.unitPrice}/><hr/></section>
+    const productsElement = products.map(useCallback(item => 
+        <section key={item.id}><ItemList id={item.id} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} quantity={item.quantity} unitPrice={item.unitPrice}/><hr/></section>)
     );
     return (
             <div className='container'>

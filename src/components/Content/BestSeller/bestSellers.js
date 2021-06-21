@@ -4,7 +4,7 @@ import BestSellerCard from '../../mini-component/best-seller-card';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {setInitialProducts} from '../../../store/action/store-actions';
-import {useState, useEffect} from 'react';
+import {useState, useEffect,useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {SolarSystemLoading} from 'react-loadingg';
 
@@ -20,13 +20,14 @@ const BestSeller = () => {
     const [products,setProducts] = useState(useSelector(state => state.productList));
     const dispatch = useDispatch();
     
-    async function getData(){
+    const getData = useCallback(async function getData(){
         const response = await fetch('https://fakestoreapi.com/products')
         .then(res=>res.json())
         .then(json=>json);
         setProducts(response);
+        console.log(response);
         return response;
-    }
+    })
     
     
     useEffect(()=> {

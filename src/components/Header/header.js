@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingBasket, faSearch,faUser} from '@fortawesome/free-solid-svg-icons';
-import {useState} from 'react';
+import {useState,useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import HeaderCSS from './header.css';
 import {useSelector} from 'react-redux';
@@ -9,16 +9,16 @@ import {useSelector} from 'react-redux';
 const Header = (props) =>
 {
     const products = useSelector(state => state.checkoutProducts);
-    const subTotal = products.reduce((total,curVal) => {
+    const subTotal = products.reduce(useCallback((total,curVal) => {
         return total + curVal.unitPrice;
-    },0);
-    const numItems = products.reduce((total, curVal) => {
+    }),0);
+    const numItems = products.reduce(useCallback((total, curVal) => {
         return total + curVal.quantity;
-    },0);
-    const LogoutUser = () => {
+    }),0);
+    const LogoutUser = useCallback(() => {
         sessionStorage.removeItem("user");
         window.location.href = "/";
-    }
+    })
     const [loggedIn,setLoggedIn] = useState(JSON.parse(sessionStorage.getItem("user")));
     let user = (loggedIn != undefined)? <Link to="/" className="user" onClick={LogoutUser}>{loggedIn.fullName}</Link>: <Link to="/login" className="user">My profile</Link>;
     

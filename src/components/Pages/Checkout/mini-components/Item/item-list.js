@@ -6,7 +6,6 @@ import './item-list.css';
 import {checkoutdecrement, checkoutincrement,deleteItem} from '../../../../../store/action/action';
 const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
     const dispatch = useDispatch();
-
     return (
         <section className="items-list__item">
             <div className="items-list__item--name">
@@ -26,7 +25,7 @@ const ItemList = ({id,itemName, image, price,quantity, unitPrice}) => {
             <div className="items-list__item--quantity">
                 <form action="" onSubmit={ e => e.preventDefault()}>
                     <button className='minus-quantity' onClick={() => dispatch(checkoutdecrement(id))}><FontAwesomeIcon icon={faMinus}/></button>
-                    <input type="number" name="quantity" className="quantity" min="0" value={quantity}/>
+                    <input type="number" name="quantity" className="quantity" min="0" value={quantity} readOnly/>
                     <button className='add-quantity' onClick={() => dispatch(checkoutincrement(id))}><FontAwesomeIcon icon={faPlus}/></button>
                 </form>
             </div>

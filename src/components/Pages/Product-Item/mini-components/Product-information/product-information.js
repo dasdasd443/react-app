@@ -2,8 +2,7 @@ import ProductInformationCSS from './product-information.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import {faShoppingCart, faHeart,faPlus,faMinus,faStar,faCheck} from '@fortawesome/free-solid-svg-icons';
-import Images from '../../../../exportFiles/exportImages';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { SolarSystemLoading } from 'react-loadingg';
 import { addToCart } from '../../../../../store/action/store-actions';
@@ -18,42 +17,40 @@ const ProductInformation = ({id}) => {
     const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id==id))?true:false);
     const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id==id))?true:false);
     const dispatch = useDispatch();
-    
+    const getData = useCallback(async function getData(){
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res=>res.json())
+        .then(json=>json)
+        setisLoaded(true);
+        setcurProduct({...response, quantity: 1});
+    })
     useEffect( ()=> {
         if(products && !isLoaded){
             let [item] = products.filter(item => item.id == id);
             setcurProduct({...item,quantity: 1});
             setisLoaded(true);
         }else{
-            async function getData(){
-                const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-                .then(res=>res.json())
-                .then(json=>json)
-                setisLoaded(true);
-                setcurProduct({...response, quantity: 1});
-            }
             if(!isLoaded){
                 getData();
             }
         }
     });
 
-    const addToCartFunc = (item) => {
+    const addToCartFunc = useCallback((item) => {
         item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};
         setisAdded(true);
         dispatch(addToCart(item));
-    }
+    })
     
-    const removeFromFavoritesFunc = (id) => {
+    const removeFromFavoritesFunc = useCallback((id) => {
         setisFavorite(false);
         dispatch(removeFromFavorites(id));
-    }
+    })
 
-    const addToFavoritesFunc = (item) => {
-        
+    const addToFavoritesFunc = useCallback((item) => {
         setisFavorite(true);
         dispatch(addToFavorites(item));
-    }
+    })
     
     return (
             <section className="items-left" style={ProductInformationCSS}>

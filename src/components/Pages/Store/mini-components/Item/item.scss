@@ -12,8 +12,8 @@
         display: flex;
         position: relative;
         justify-content: center;
-        margin: 40px 0;
-
+        margin: 10px 0;
+        gap:1rem;
         &::after{
         content: "HOT";
         position:absolute;
@@ -26,23 +26,31 @@
         color: white;
         }
         &--img{
+            display:flex;
+            place-items: center;
+            justify-content: center;
             border: 1px solid lightgray;
             padding: 60px 10px;
+            width:200px;
             img{
-                max-width:200px;
-                max-height:200px;
+                max-width:80%;
+                max-height:80%;
             }
         }
 
     }
     &-content{
-        margin-left: 20px;
-        
+        flex:8;
         &--h3{
             font-weight: bolder;
+            width:40vw;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow:hidden;
             a{
                 color:black;
                 text-decoration: none;
+                
             }
         }
         &--smallDetails{

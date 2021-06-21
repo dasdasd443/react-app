@@ -2,7 +2,7 @@ import './item.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faStar, faShoppingCart, faHeart, faCheck} from '@fortawesome/free-solid-svg-icons';
 import {useDispatch, useSelector} from 'react-redux';
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 import {addToCart} from '../../../../../store/action/store-actions';
 import {Link} from 'react-router-dom';
 import {addToFavorites, removeFromFavorites} from '../../../../../store/action/favorites-action';
@@ -14,29 +14,29 @@ const Item = ({id,description, itemName, image, price}) => {
     const productList = useSelector(state => state.productList);
     const checkoutList = useSelector(state => state.checkoutProducts);
     const favorites = useSelector(state => state.favorites);
-    const addToCartFunc = (id) => {
+    const addToCartFunc = useCallback((id) => {
         let [item] = productList.filter(item => item.id==id); 
         item = {...item, quantity: 0, unitPrice: 0};
         setAddToCartButton(<button className="items-container-menus-content--buttons--add"><FontAwesomeIcon icon={faCheck} /> Added to Cart</button>)
         dispatch(addToCart(item));
-    }
+    })
     const [addToCartButton, setAddToCartButton] = useState(
         (checkoutList.some(item => item.id == id)?<button className="items-container-menus-content--buttons--add"><FontAwesomeIcon icon={faCheck} /> Added to Cart</button>:<button className="enabled items-container-menus-content--buttons--add" onClick={() => addToCartFunc(id)}><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button>)
     );
     const [addToFavoritesButton, setAddToFavoritesButton] = useState(
         (favorites.some(item => item.id == id)? <button className="items-container-menus-content--buttons--heart favorite" onClick={ ()=>removeFromFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>: <button className="items-container-menus-content--buttons--heart" onClick={() => addToFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
     );
-    const removeFromFavoritesFunc = (id) => {
+    const removeFromFavoritesFunc = useCallback((id) => {
         setAddToFavoritesButton(<button className="items-container-menus-content--buttons--heart" onClick={() => addToFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
         dispatch(removeFromFavorites(id));
-    }
+    })
 
-    const addToFavoritesFunc = (id) => {
+    const addToFavoritesFunc = useCallback((id) => {
         
         let [item] = productList.filter(item => item.id==id);
         setAddToFavoritesButton(<button className="items-container-menus-content--buttons--heart favorite" onClick={ ()=>removeFromFavoritesFunc(id)}><FontAwesomeIcon icon={faHeart} /></button>)
         dispatch(addToFavorites(item));
-    }
+    })
     return (
         <div>
             <div className="items-container-menus-boxes">

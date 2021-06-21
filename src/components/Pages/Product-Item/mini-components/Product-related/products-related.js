@@ -7,7 +7,6 @@ const ProductsRelated = () => {
     return (
         <section className="related-products" style={ProductsRelatedCSS}>
                 <h2 className="related-products-title">RELATED PRODUCTS</h2>
-
                 <div className="bs-category-gallery--one">
                     <BestSellerCard image={images.AppleMac()} hotornot="not"/>
                     <BestSellerCard image={images.AppleMac()} hotornot="not"/>
