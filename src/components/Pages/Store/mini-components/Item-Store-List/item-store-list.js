@@ -1,7 +1,7 @@
 import Images from '../../../../exportFiles/exportImages';
 import Item from '../Item/item';
 import {useSelector,useDispatch} from 'react-redux';
-import {useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
 import {setInitialProducts} from '../../../../../store/action/store-actions';
 import {SolarSystemLoading} from 'react-loadingg';
 import './item-store-list.css';
@@ -14,24 +14,26 @@ const ItemStoreList = () => {
     const [isLoaded, setisLoaded] = useState(useSelector(state => state.productList));
     const [products,setProducts] = useState(useSelector(state => state.productList));
     const dispatch = useDispatch();
-    async function getData(){
+    const getData = useCallback( async function getData(){
         const response = await fetch('https://fakestoreapi.com/products')
         .then(res=>res.json())
         .then(json=>json);
         setProducts(response);
         return response;
-    }
-    if(!isLoaded){
-        getData();
-        if(products){
-            setisLoaded(true);
-            setProducts(products);
-            dispatch(setInitialProducts(products));
-            setproductListElements(products.map(item => {
-                return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} id={item.id}/>
-            }));
+    });
+    useEffect( () => {
+        if(!isLoaded){
+            getData();
+            if(products){
+                setisLoaded(true);
+                setProducts(products);
+                dispatch(setInitialProducts(products));
+                setproductListElements(products.map(item => {
+                    return <Item key={item.id} description={item.description} itemName={item.itemName || item.title} image={item.image} price={item.price.toFixed(2)} id={item.id}/>
+                }));
+            }
         }
-    }
+    });
     
     return (
         <section className="items-container">

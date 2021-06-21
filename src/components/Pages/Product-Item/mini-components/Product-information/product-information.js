@@ -18,22 +18,25 @@ const ProductInformation = ({id}) => {
     const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id==id))?true:false);
     const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id==id))?true:false);
     const dispatch = useDispatch();
-    if(products && !isLoaded){
-        let [item] = products.filter(item => item.id == id);
-        setcurProduct({...item,quantity: 1});
-        setisLoaded(true);
-    }else{
-        async function getData(){
-            const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res=>res.json())
-            .then(json=>json)
+    
+    useEffect( ()=> {
+        if(products && !isLoaded){
+            let [item] = products.filter(item => item.id == id);
+            setcurProduct({...item,quantity: 1});
             setisLoaded(true);
-            setcurProduct({...response, quantity: 1});
+        }else{
+            async function getData(){
+                const response = await fetch(`https://fakestoreapi.com/products/${id}`)
+                .then(res=>res.json())
+                .then(json=>json)
+                setisLoaded(true);
+                setcurProduct({...response, quantity: 1});
+            }
+            if(!isLoaded){
+                getData();
+            }
         }
-        if(!isLoaded){
-            getData();
-        }
-    }
+    });
 
     const addToCartFunc = (item) => {
         item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};

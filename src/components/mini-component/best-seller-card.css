@@ -77,7 +77,7 @@
 }
 
 .bs-category-gallery--one--box--image--overlay .favorite {
-  color: red !important;
+  color: #FF4858 !important;
 }
 
 .bs-category-gallery--one--box--image--overlay .overlay-icon {
@@ -94,6 +94,7 @@
 
 .bs-category-gallery--one--box--h4 {
   margin: 20px 0;
+  line-height: 1.6;
 }
 
 .bs-category-gallery--one--box--h4 a {

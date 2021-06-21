@@ -30,14 +30,14 @@ const Checkout = () => {
                     <section className='page11'>
                         <div className="App items-list">
                             <section className="items-list__header">
-                                <h1>Product</h1>
-                                <h1>Price</h1>
-                                <h1>QTY</h1>
-                                <h1>Unit Price</h1>
+                                <span>Product</span>
+                                <span>Unit Price</span>
+                                <span>QTY</span>
+                                <span>Price</span>
                             </section>
                             <hr/>
                             <div>
-                            {(productsElement.length == 0)? <h1>Your cart is Empty! Click <Link to='/store'>here</Link> to shop!</h1>: productsElement}
+                            {(productsElement.length == 0)? <span>Your cart is Empty! Click <Link to='/store'>here</Link> to shop!</span>: productsElement}
                             </div>
                         </div>
                         <div className="total">

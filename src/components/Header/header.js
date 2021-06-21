@@ -41,7 +41,7 @@ const Header = (props) =>
                 <section className="header__account--item">
                     <Link to="/checkout"><FontAwesomeIcon icon={faShoppingBasket} />
                         <span>{numItems} Items</span>
-                        <small>${subTotal}.00</small>
+                        <small>${subTotal.toFixed(2)}</small>
                     </Link>    
                 </section>
                 <section className="header__account--item">
