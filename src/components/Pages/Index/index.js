@@ -7,12 +7,16 @@ import BestSellers from '../../Content/BestSeller/bestSellers';
 import Newsletter from '../../Content/Newsletter/newsletter';
 import Banner2 from '../../Content/Banner2/banner-2';
 import Categories from '../../Footer/Categories/categories';
+import { useSelector } from 'react-redux';
 import IndexCSS from './index.css';
 
 const Index = () => {
+    const newsletterDisplay = useSelector( state => state.newsletter);
+    const newsletterelem = (newsletterDisplay === 1)?"":<Newsletter classsName="newsletter"/>;
+    
     return (
             <div className = "container" style={IndexCSS}>
-                <Newsletter classsName="newsletter"/>
+                {newsletterelem}
                 <div className="App">
                 <Header/>
                 <span className="line-title"></span>

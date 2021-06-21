@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faEye} from '@fortawesome/free-solid-svg-icons';
 import Images from '../../exportFiles/exportImages';
+import { useCallback } from 'react';
 let images = new Images();
 
 const Signup = () => {
-    const ShowPassword = () => {
+    const ShowPassword = useCallback(() => {
         let password = document.querySelector("#password");
         let icon = document.querySelector("i");
         if(password.type === "password"){
@@ -16,9 +17,9 @@ const Signup = () => {
             password.type = "password";
             icon.className = "fas fa-eye show-password";
         }
-    }
+    })
 
-    const SignupUser = (e) => {
+    const SignupUser = useCallback((e) => {
         e.preventDefault();
         document.querySelectorAll(".error").forEach((elem,index) => {
             elem.innerText = " ";
@@ -94,7 +95,7 @@ const Signup = () => {
                 window.location.href = "/";
             }
         }
-    }
+    })
 
     const Background = {
         backgroundImage: `url(${images.Background()})`

@@ -8,9 +8,13 @@ import Checkout from './components/Pages/Checkout/checkout';
 import Store from './components/Pages/Store/store';
 import ProductItem from './components/Pages/Product-Item/product-item';
 import {Route, BrowserRouter as Router,Switch} from 'react-router-dom';
+import {useState,useEffect} from 'react';
 
 function App() {
-  
+  const [newsletterDisplay, setNewsletterDisplay] = useState(0);
+  useEffect(()=>{
+    setNewsletterDisplay(1);
+});
   return (
     <Router>
       <Switch>

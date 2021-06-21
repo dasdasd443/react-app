@@ -11,7 +11,7 @@
 .banner__flag {
   position: relative;
   height: 100%;
-  width: 75vw;
+  width: 80vw;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,9 +46,9 @@
 }
 
 .banner__flag .flag__text {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+  -webkit-box-flex: 12;
+      -ms-flex: 12;
+          flex: 12;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

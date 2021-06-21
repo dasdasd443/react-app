@@ -2,13 +2,21 @@ import NewsLetterCSS from './newsletter.css';
 import Image from '../../exportFiles/exportImages';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import {useCallback, useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import {setNewsletter} from '../../../store/action/newsletter-action';
 let images = new Image(); 
 
 const Newsletter = () => {
-    const close = () => {
-         let newsletter = document.querySelector(".newsletter").style;
-         newsletter.display = "none";
-    }
+    const dispatch = useDispatch();
+    const newsletterdisplay = useCallback(()=>{
+        dispatch(setNewsletter())
+    });
+    const close = useCallback(() => {
+        let newsletter = document.querySelector(".newsletter").style;
+        newsletter.display = "none";
+        newsletterdisplay();
+   })
     return (
         <section className="newsletter" style={NewsLetterCSS}>
             <section className="newsletter__background">
