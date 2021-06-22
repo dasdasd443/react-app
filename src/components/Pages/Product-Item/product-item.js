@@ -25,7 +25,7 @@ const ProductItem = () => {
                         <ProductInformation id={id} className="main__product-information"/>
                         <ProductBestSellers className="main__product-bestsellers"/>
                     </section>
-                    <ProductsRelated/>
+                    <ProductsRelated id={id}/>
                     <Footer/>
                 </div>
             </div>

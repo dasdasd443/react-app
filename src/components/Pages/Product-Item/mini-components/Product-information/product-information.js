@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { SolarSystemLoading } from 'react-loadingg';
 import { addToCart } from '../../../../../store/action/store-actions';
 import { addToFavorites, removeFromFavorites } from '../../../../../store/action/favorites-action';
-
+import { setCurrentProduct } from '../../../../../store/action/current-product-actions';
 const ProductInformation = ({id}) => {
     const products = useSelector(state => state.productList);
     const checkoutList = useSelector(state => state.checkoutProducts);
@@ -23,15 +23,18 @@ const ProductInformation = ({id}) => {
         .then(json=>json)
         setisLoaded(true);
         setcurProduct({...response, quantity: 1});
+        dispatch(setCurrentProduct({...response,quantity: 1, favorite: 0,size: "XS",color:"Black"}));
     })
     useEffect( ()=> {
         if(products && !isLoaded){
             let [item] = products.filter(item => item.id == id);
             setcurProduct({...item,quantity: 1});
+            dispatch(setCurrentProduct({...item,quantity: 1, favorite: 0,size: "XS",color:"Black"}));
             setisLoaded(true);
         }else{
             if(!isLoaded){
                 getData();
+                
             }
         }
     });

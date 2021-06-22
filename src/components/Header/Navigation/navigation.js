@@ -1,6 +1,8 @@
 import NavigationCSS from './navigation.css';
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const Navigation = () => {
+    let curProd = useSelector(state => state.currentProduct);
     return (
         <section className="navigation" style={NavigationCSS}>
             <section className="navigation__links">
@@ -8,7 +10,7 @@ const Navigation = () => {
                 <span>/</span>
                 <Link to='/store'>Accessories</Link>
                 <span>/</span>
-                <span>Beat Solo2 on Ear Headphones-Black</span>
+                <span>{curProd.title}</span>
             </section>
         </section>
     );
