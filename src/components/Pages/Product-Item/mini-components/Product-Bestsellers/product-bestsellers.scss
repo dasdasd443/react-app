@@ -9,18 +9,19 @@
 }
 .items-right-bestSeller{
     margin: 0 auto;
-
+    position:relative;
     &-h4{
         color: #adadad;
-        font-weight: bolder;
+        font-weight: 300;
         margin-bottom: 30px;
     }
     &-box{
        margin: 20px 0;
-
+       &--h4{
+           
+       }
         &--img{
             width: 240px;
-
             img{
                 width: 200px;
                 margin-left: 18px;

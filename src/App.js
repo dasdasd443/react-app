@@ -1,7 +1,7 @@
 
 import './App.css';
 import Index from './components/Pages/Index/index';
-import ProductsPage from './components/Pages/Products/products-page';
+import ProductsPage from './components/Pages/Products/product-page';
 import Login from './components/Pages/Login/login';
 import Signup from './components/Pages/Signup/signup';
 import Checkout from './components/Pages/Checkout/checkout';

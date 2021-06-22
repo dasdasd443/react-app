@@ -14,11 +14,12 @@
 
 .items-right-bestSeller {
   margin: 0 auto;
+  position: relative;
 }
 
 .items-right-bestSeller-h4 {
   color: #adadad;
-  font-weight: bolder;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 
