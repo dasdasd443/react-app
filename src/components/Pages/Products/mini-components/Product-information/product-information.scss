@@ -215,11 +215,12 @@ input[type="radio"] {
 .bottomOptions{
     display: flex;
     justify-content: space-between;
+    place-items: center;
     margin: 20px 0;
 }
 .numOrder{
     display: flex;
-
+    height:40px;
     &--sub{
         color: #33A0FF;
         border: none;
@@ -254,6 +255,10 @@ input[type="radio"] {
         &:focus{
             outline: none;
         }
+    }
+    &--sub:hover,&--add:hover{
+        color:white;
+        background-color:#33A0FF;
     }
 }
 .buttonCartheart{
