@@ -1,32 +1,30 @@
 import BestSellerCSS from './product-bestsellers.css';
 import Images from '../../../../exportFiles/exportImages';
+import { useEffect, useCallback, useState } from 'react';
+import SolarSystemLoading from 'react-loadingg/lib/SolarSystemLoading';
+import BestSellerCard from '../../../../mini-component/best-seller-card';
 let images = new Images();
 const ProductBestSellers = () => {
+    const [products,setProducts] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [bestSeller,setBestSeller] = useState(0);
+    const getData = useCallback(async function getData(){
+        const response = await fetch(`https://fakestoreapi.com/products`)
+        .then(res=>res.json())
+        .then(json=>json)
+        setBestSeller(response[0])
+        setIsLoaded(true);
+    });
+    useEffect(() => {
+        if(!isLoaded){
+            getData();
+        }
+    })
     return (
         <section className="items-right" style={BestSellerCSS}>
                     <div className="items-right-bestSeller">
-                        <h4 className="items-right-bestSeller-h4">BEST SELLER</h4>
-                        <div className="bs-category-gallery--one--box">
-                            <div className="bs-category-gallery--one--box--image">
-                            <img src={images.AppleMac()} alt="" />
-                            <div className="bs-category-gallery--one--box--image--overlay">
-                                <i className="fas fa-heart"></i>
-                                <i className="fas fa-shopping-cart"></i>
-                            </div>
-                            </div>
-                            <h4 className="bs-category-gallery--one--box--h4">Apple Macbook Pro</h4>
-                            <div className="bs-category-gallery--one--box--stars">
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star"></i>
-                                <i className="fas fa-star bs-category-gallery--one--box--stars--last"></i>
-                            </div>
-                            <div className="bs-category-gallery--one--box--price">
-                                <p className="bs-category-gallery--one--box--price--enabled" >$499</p>
-                                <p className="bs-category-gallery--one--box--price--disabled">$599</p>
-                            </div>
-                        </div>
+                        {(bestSeller)? <div><h4 className="items-right-bestSeller-h4">BEST SELLER</h4>
+                        <BestSellerCard id={bestSeller.id} itemName={bestSeller.title} price={bestSeller.price.toFixed(2)} image={bestSeller.image} hotornot={"hot"}/></div>: <SolarSystemLoading/>}
                     </div>
                     <div className="items-right-slides">
                         <div className="items-right-slides-button"></div>

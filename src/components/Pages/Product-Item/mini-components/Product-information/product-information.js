@@ -91,7 +91,7 @@ const ProductInformation = ({id}) => {
 
                         <div className="category">
                         <span className="category--label">Category :</span>
-                        <span className="category--value">Accessories</span>
+                        <span className="category--value">{curProduct.category[0].toUpperCase() + curProduct.category.slice(1).toLowerCase()}</span>
                         </div>
 
                         <p className="items-left-details-productDetails-free"> Free Shipping</p>

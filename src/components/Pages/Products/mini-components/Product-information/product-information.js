@@ -1,56 +1,69 @@
 import ProductInformationCSS from './product-information.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter} from '@fortawesome/free-brands-svg-icons';
-import {faShoppingCart, faHeart,faPlus,faMinus} from '@fortawesome/free-solid-svg-icons';
-import Images from '../../../../exportFiles/exportImages';
-import {useState} from 'react';
+import {faShoppingCart, faHeart,faPlus,faMinus,faStar,faCheck} from '@fortawesome/free-solid-svg-icons';
+import {useState, useEffect, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { minusQuantity , addQuantity} from '../../../../../store/action/current-product-actions';
-
-
-const ProductInformation = () => {
-    let images = new Images();
-    const curProduct = useSelector(state => state.currentProduct);
+import { SolarSystemLoading } from 'react-loadingg';
+import { addToCart } from '../../../../../store/action/store-actions';
+import { addToFavorites, removeFromFavorites } from '../../../../../store/action/favorites-action';
+import { setCurrentProduct } from '../../../../../store/action/current-product-actions';
+const ProductInformation = ({curProd}) => {
+    const products = useSelector(state => state.productList);
+    const checkoutList = useSelector(state => state.checkoutProducts);
+    const favorites = useSelector(state => state.favorites);
+    const [curProduct,setcurProduct] = useState(curProd);
+    const [isLoaded, setisLoaded] = useState(false);
+    const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id==curProd.id))?true:false);
+    const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id==curProd.id))?true:false);
     const dispatch = useDispatch();
-    const [quantity, setQuantity] = useState(0);
-    const [color,setColor] = useState("Black");
-    const [product_color, setProduct_color] = useState(2);
+    useEffect( ()=> {
+        console.log(curProd)
+        
+    });
 
-    const product_images = [
-        {image1: images.BeatsSoloPink1(), image2: images.BeatsSoloPink2(), image3: images.BeatsSoloPink3(), image4: images.BeatsSoloPink4(), image5: images.BeatsSoloPink5()},
-        {image1: images.BeatsSoloRed1(), image2: images.BeatsSoloRed2(), image3: images.BeatsSoloRed3(), image4: images.BeatsSoloRed4(), image5: images.BeatsSoloRed5()},
-        {image1: images.BeatsSoloBlack1(), image2: images.BeatsSoloBlack2(), image3: images.BeatsSoloBlack3(), image4: images.BeatsSoloBlack4(), image5: images.BeatsSoloBlack5()},
-        {image1: images.BeatsSoloWhite1(), image2: images.BeatsSoloWhite2(), image3: images.BeatsSoloWhite3(), image4: images.BeatsSoloWhite4(), image5: images.BeatsSoloWhite5()},
-        {image1: images.BeatsSoloBrown1(), image2: images.BeatsSoloBrown2(), image3: images.BeatsSoloBrown3(), image4: images.BeatsSoloBrown4(), image5: images.BeatsSoloBrown5()}
-    ]
+    const addToCartFunc = useCallback((item) => {
+        item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};
+        setisAdded(true);
+        dispatch(addToCart(item));
+    })
+    
+    const removeFromFavoritesFunc = useCallback((id) => {
+        setisFavorite(false);
+        dispatch(removeFromFavorites(id));
+    })
+
+    const addToFavoritesFunc = useCallback((item) => {
+        setisFavorite(true);
+        dispatch(addToFavorites(item));
+    })
     
     return (
             <section className="items-left" style={ProductInformationCSS}>
+                {(curProduct)? <div>
                 <div className="items-left-details">
                     <div className="items-left-details--productImages">
                         <figure className="items-left-details--productImages--largeView">
-                            <img src={product_images[product_color].image1} alt=""/>
+                            <img src={curProduct.image} alt=""/>
                         </figure>
-                        <div className="items-left-details--productImages--listImages">
-                            <figure className="items-left-details--productImages--listImages--small"><img src={product_images[product_color].image2} alt=""/></figure>
-                            <figure className="items-left-details--productImages--listImages--small"><img src={product_images[product_color].image3} alt=""/></figure>
-                            <figure className="items-left-details--productImages--listImages--small"><img src={product_images[product_color].image4} alt=""/></figure>
-                            <figure className="items-left-details--productImages--listImages--small"><img src={product_images[product_color].image5} alt=""/></figure>
-                        </div>
                     </div>
                     <div className="items-left-details-productDetails">
-                        <h2 className="items-left-details-h2">{curProduct.itemName} - {curProduct.color}</h2>
+                        <h2 className="items-left-details-h2">{curProduct.itemName || curProduct.title}</h2>
 
                         <div className="items-left-details-productDetails-reviewDetails">
                             <div className="items-left-details-productDetails-reviewDetails--str">
-                                <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
+                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon icon={faStar}/>
+                                <FontAwesomeIcon icon={faStar}/>
                             </div>
                             <span className="items-left-details-productDetails-reviewDetails--reviews">0 reviews</span>
                             <span className="items-left-details-productDetails-reviewDetails--subReviews">Submit a review</span>
                         </div>
                         <hr/>
                         <div className="bs-category-gallery--one--box--price items-container-menus-content--price price-bolder">
-                            <p className="bs-category-gallery--one--box--price--enabled price-bolder-red" >$499</p>
+                            <p className="bs-category-gallery--one--box--price--enabled price-bolder-red" >${curProduct.price.toFixed(2)}</p>
                             <p className="bs-category-gallery--one--box--price--disabled">$599</p>
                         </div>
                         
@@ -61,7 +74,7 @@ const ProductInformation = () => {
 
                         <div className="category">
                         <span className="category--label">Category :</span>
-                        <span className="category--value">Accessories</span>
+                        <span className="category--value">{curProduct.category[0].toUpperCase() + curProduct.category.slice(1).toLowerCase()}</span>
                         </div>
 
                         <p className="items-left-details-productDetails-free"> Free Shipping</p>
@@ -71,27 +84,27 @@ const ProductInformation = () => {
                         <div className="color">
                             <label htmlFor="" className="color-label">Select Color :</label> 
                             <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() =>{setColor("Pink");setProduct_color(0)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="pink"></span>
                                 </label>
                                 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Red"); setProduct_color(1)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="red"></span>
                                 </label>
                                 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Black"); setProduct_color(2)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="black"></span>
                                 </label>
 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("White"); setProduct_color(3)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="white"></span>
                                 </label>
 
                                 <label className="color-option">
-                                <input name="color" type="radio" className="color-radio" onClick={() => {setColor("Brown"); setProduct_color(4)}}/>
+                                <input name="color" type="radio" className="color-radio" />
                                 <span className="brown"></span>
                                 </label>
                         </div>
@@ -107,16 +120,17 @@ const ProductInformation = () => {
                         <hr/>
                         <div className="bottomOptions">
                             <div className="numOrder">
-                            <button className="numOrder--sub" onClick={() => dispatch(minusQuantity(curProduct.id))}><FontAwesomeIcon icon={faMinus}/></button>
+                            <button className="numOrder--sub"onClick={()=>setcurProduct({...curProduct, quantity: (curProduct.quantity > 0)? curProduct.quantity - 1: curProduct.quantity})} ><FontAwesomeIcon icon={faMinus}/></button>
                             <span className="numOrder--value">{curProduct.quantity}</span>
                             <input className="numOrder--value__input" type="hidden" value={curProduct.quantity}/>
-                            <button className="numOrder--add" onClick={() => dispatch(addQuantity(curProduct.id))}><FontAwesomeIcon icon={faPlus}/></button>
+                            <button className="numOrder--add" onClick={()=>setcurProduct({...curProduct, quantity: curProduct.quantity + 1})}><FontAwesomeIcon icon={faPlus}/></button>
                             </div>
                             <div className="buttonCartheart">
-                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>
-                                <button className="buttonCartheart-heart"><FontAwesomeIcon icon={faHeart}/></button>
+                                {(!isAdded)?    <button className="buttonCartheart-add enabled" onClick={()=> addToCartFunc(curProduct)}><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>:
+                                                <button className="buttonCartheart-add"><FontAwesomeIcon icon={faCheck}/> Added to Cart</button>}
+                                {(!isFavorite)?  <button className="buttonCartheart-heart enabled" onClick={() => addToFavoritesFunc(curProduct)}><FontAwesomeIcon icon={faHeart}/></button>: 
+                                                <button className="buttonCartheart-heart enabled favorite" onClick={()=> removeFromFavoritesFunc(curProd.id)}><FontAwesomeIcon icon={faHeart}/></button>}
                                 </div>
-
                         </div>
                     </div>
                 </div>
@@ -134,13 +148,10 @@ const ProductInformation = () => {
                     </div>
                     <hr className="productInformation--hr"/>
                     <p className="productInformation-p">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus sit nesciunt sapiente ipsum laudantium in deleniti ipsam omnis, doloribus, hic veritatis magni temporibus quos, sed possimus fuga distinctio laboriosam maxime.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque unde tempore hic sed cupiditate, natus placeat fuga porro corrupti reprehenderit veniam praesentium pariatur impedit neque dicta sint. Sunt, qui asperiores!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dicta, consequuntur facilis adipisci unde omnis amet assumenda labore magni necessitatibus eum veniam libero maiores odit in quaerat? Quo, dicta molestias.
-                        <br/><br/>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est nesciunt in eaque! Harum possimus mollitia dolorem. Voluptatum asperiores quo accusamus natus? Dolore veritatis id accusamus dolorem deleniti odit consequuntur doloremque!
+                        {curProduct.description}
                     </p>
                 </div>
+                </div>: <SolarSystemLoading/>}
             </section>
     );
 }
