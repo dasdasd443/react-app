@@ -260,6 +260,7 @@ input[type="radio"] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  place-items: center;
   margin: 20px 0;
 }
 
@@ -267,6 +268,7 @@ input[type="radio"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 40px;
 }
 
 .numOrder--sub {
@@ -311,6 +313,11 @@ input[type="radio"] {
 
 .numOrder--add:focus {
   outline: none;
+}
+
+.numOrder--sub:hover, .numOrder--add:hover {
+  color: white;
+  background-color: #33A0FF;
 }
 
 .buttonCartheart {

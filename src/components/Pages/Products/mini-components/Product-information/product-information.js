@@ -120,10 +120,10 @@ const ProductInformation = ({curProd}) => {
                         <hr/>
                         <div className="bottomOptions">
                             <div className="numOrder">
-                            <button className="numOrder--sub"onClick={()=>setcurProduct({...curProduct, quantity: (curProduct.quantity > 0)? curProduct.quantity - 1: curProduct.quantity})} ><FontAwesomeIcon icon={faMinus}/></button>
-                            <span className="numOrder--value">{curProduct.quantity}</span>
-                            <input className="numOrder--value__input" type="hidden" value={curProduct.quantity}/>
-                            <button className="numOrder--add" onClick={()=>setcurProduct({...curProduct, quantity: curProduct.quantity + 1})}><FontAwesomeIcon icon={faPlus}/></button>
+                                <button className="numOrder--sub"onClick={()=>setcurProduct({...curProduct, quantity: (curProduct.quantity > 0)? curProduct.quantity - 1: curProduct.quantity})} ><FontAwesomeIcon icon={faMinus}/></button>
+                                <span className="numOrder--value">{curProduct.quantity}</span>
+                                <input className="numOrder--value__input" type="hidden" value={curProduct.quantity}/>
+                                <button className="numOrder--add" onClick={()=>setcurProduct({...curProduct, quantity: curProduct.quantity + 1})}><FontAwesomeIcon icon={faPlus}/></button>
                             </div>
                             <div className="buttonCartheart">
                                 {(!isAdded)?    <button className="buttonCartheart-add enabled" onClick={()=> addToCartFunc(curProduct)}><FontAwesomeIcon icon={faShoppingCart}/> Add to Cart</button>:
