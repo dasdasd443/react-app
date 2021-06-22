@@ -15,3 +15,12 @@ export const minusQuantity = (id) => {
         }
     }
 }
+
+export const setCurrentProduct = (item) => {
+    return {
+        type:"SET_CUR_PROD",
+        payload:{
+            item
+        }
+    }
+}

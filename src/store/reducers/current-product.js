@@ -14,6 +14,9 @@ const updateCurrentProductQuantity = (state = initialState, action) => {
             return {...state, quantity: state.quantity + 1}
         case "MINUS_QUANTITY":
             return (state.quantity > 0)? {...state, quantity: state.quantity - 1}: state;
+        case "SET_CUR_PROD":
+            state = action.payload.item;
+            return state;
         default:
             return state;
     }
