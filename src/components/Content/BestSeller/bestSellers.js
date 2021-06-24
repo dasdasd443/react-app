@@ -25,12 +25,12 @@ const BestSeller = () => {
         .then(res=>res.json())
         .then(json=>json);
         setProducts(response);
-        console.log(response);
         return response;
     })
     
     
     useEffect(()=> {
+        let mounted = true;
         if(!isLoaded){
             getData();
             if(products){
@@ -42,6 +42,7 @@ const BestSeller = () => {
                 }));
             }
         }
+        return () => mounted = false;
     });
 
     return (

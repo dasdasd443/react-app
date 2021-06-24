@@ -17,10 +17,6 @@ const ProductInformation = ({curProd}) => {
     const [isAdded, setisAdded] = useState((checkoutList.some(item => item.id==curProd.id))?true:false);
     const [isFavorite, setisFavorite] = useState((favorites.some(item => item.id==curProd.id))?true:false);
     const dispatch = useDispatch();
-    useEffect( ()=> {
-        console.log(curProd)
-        
-    });
 
     const addToCartFunc = useCallback((item) => {
         item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};

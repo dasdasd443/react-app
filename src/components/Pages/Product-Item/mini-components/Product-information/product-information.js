@@ -26,6 +26,7 @@ const ProductInformation = ({id}) => {
         dispatch(setCurrentProduct({...response,quantity: 1, favorite: 0,size: "XS",color:"Black"}));
     })
     useEffect( ()=> {
+        let mounted = true;
         if(products && !isLoaded){
             let [item] = products.filter(item => item.id == id);
             setcurProduct({...item,quantity: 1});
@@ -37,7 +38,9 @@ const ProductInformation = ({id}) => {
                 
             }
         }
-    });
+
+        return () => mounted = false;
+    },[]);
 
     const addToCartFunc = useCallback((item) => {
         item = {...item, unitPrice: item.quantity * item.price, quantity: item.quantity - 1};

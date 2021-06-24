@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux';
 const ProductsPage = () => {
     let {id} = useParams();
     let curProd = useSelector(state => state.currentProduct);
-    console.log(curProd)
     return (
         <div className = "container">
                 <div className="App">
