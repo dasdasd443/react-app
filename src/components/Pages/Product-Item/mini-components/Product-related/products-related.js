@@ -35,12 +35,14 @@ const ProductsRelated = ({id}) => {
     })
 
     useEffect(()=>{
-        
+        let mounted = true;
         if(!isLoaded){
             getProducts();
             getData();
         }
-    });
+
+        return () => mounted = false;
+    },[]);
     
     
     return (

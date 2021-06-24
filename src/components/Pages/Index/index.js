@@ -9,11 +9,22 @@ import Banner2 from '../../Content/Banner2/banner-2';
 import Categories from '../../Footer/Categories/categories';
 import { useSelector } from 'react-redux';
 import IndexCSS from './index.css';
+import { useCallback, useEffect } from 'react';
 
 const Index = () => {
     const newsletterDisplay = useSelector( state => state.newsletter);
     const newsletterelem = (newsletterDisplay === 1)?"":<Newsletter classsName="newsletter"/>;
     
+    const getData = useCallback(async function getData() {
+        const response = await fetch('https://rakutech-app.herokuapp.com/api/user/',
+            {mode:'cors'}
+        ).then(res => res.text());
+        console.log(response);
+    });
+
+    useEffect(() => {
+        getData();
+    })
     return (
             <div className = "container" style={IndexCSS}>
                 {newsletterelem}

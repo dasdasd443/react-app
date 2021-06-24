@@ -16,10 +16,12 @@ const ProductBestSellers = () => {
         setIsLoaded(true);
     });
     useEffect(() => {
+        let mounted = true;
         if(!isLoaded){
             getData();
         }
-    })
+        return () => mounted = false;
+    },[])
     return (
         <section className="items-right" style={BestSellerCSS}>
                     <div className="items-right-bestSeller">
