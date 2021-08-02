@@ -24,7 +24,7 @@ const Signup = () => {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
         const name = document.querySelector("#fullname").value;
-        const response = await fetch('http://localhost:8080/api/user/register/',
+        const response = await fetch('http://localhost:5000/api/user/register/',
             {mode:'cors',
             method:'POST',
             headers: new Headers({'content-type':'application/json'}),
@@ -71,7 +71,6 @@ const Signup = () => {
                                 <div className="input-group">
                                     <label htmlFor="fullname">Full Name <span id="fullname-error" className='error'></span></label>
                                     <input type="text" id="fullname" required/>
-                                    
                                 </div>
                                 <div className="input-group">
                                     <label htmlFor="email">Email <span id="email-error" className='error'></span></label>

@@ -1,9 +1,11 @@
 import LoginCSS from './login.css';
 import Image from '../../exportFiles/exportImages';
 import {Link} from 'react-router-dom';
+import { useCallback } from 'react';
+import Header from '../../Header/header';
 let images = new Image();
 const Login = () => {
-    const LoginUser = (e) => {
+    const LoginUser = useCallback(async function LoginUser(e){
         e.preventDefault();
         document.querySelectorAll(".error").forEach((elem,index) => {
             elem.innerText = " ";
@@ -11,43 +13,21 @@ const Login = () => {
         let email = document.querySelector("#email").value;
         let password = document.querySelector("#password").value;
 
-        let error = 0;
-
-        if(email.length === 0){
-            document.querySelector("#email-error").innerText = "Please input an email";
-            error = 1;
-        }else{
-            document.querySelector("#email-error").innerText = " ";
-        }
-
-        if(password.length < 8){
-            document.querySelector("#password-error").innerText = "The password must be at least 8 characters!";
-            error = 1;
-        }else{
-            document.querySelector("#password-error").innerText = " ";
-        }
-
-        if(error === 0){
-            let users = localStorage.getItem("users");
-            users = JSON.parse(users);
-
-            if(users !== null){
-                let found = 0;
-                users.forEach((user,index) => {
-                    if(user.email == email && user.password == password){
-                        sessionStorage.setItem("user",JSON.stringify(user));
-                        window.location.href = "/";
-                        found = 1;
-                    }else if(user.email == email && user.password !=password){
-                        document.querySelector("#password-error").innerText = "The password is incorrect";
-                    }
-                });
-                if(found === 0){
-                    document.querySelector("#email-error").innerText = "Email is not found!";
-                }
-            }
-        }
-    }
+        const response = await fetch('http://localhost:5000/api/user/login', {
+            mode:'cors',
+            method:'POST',
+            headers: new Headers({
+                'content-type':'application/json',
+            }),
+            body: JSON.stringify({
+                email,
+                password,
+                username:"blahblah"
+            })
+        }).then(res => res.text());
+        
+        console.log(response);
+    })
 
     const Background = {
         backgroundImage: `url(${images.Background()})`

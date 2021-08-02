@@ -15,6 +15,11 @@ const Index = () => {
     const newsletterDisplay = useSelector( state => state.newsletter);
     const newsletterelem = (newsletterDisplay === 1)?"":<Newsletter classsName="newsletter"/>;
     
+    fetch('http://localhost:5000/',{
+        headers:{
+            'Access-Control-Allow-Origin':'*'
+        }
+    }).then(res => console.log(res.text()));
     return (
             <div className = "container" style={IndexCSS}>
                 {newsletterelem}
